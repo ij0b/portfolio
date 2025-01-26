@@ -1,0 +1,205 @@
+/* +++M O D A L _ W I N D O W */
+
+[data-modal-window-href],
+[data-modal-window-a] {
+  cursor: pointer;
+}
+[data-modal-window-group][data-modal-window-a] {
+  cursor: default;
+}
+.modal-window,
+[data-modal-window-content],
+[data-modal-window-group-elm] {
+  display: none;
+}
+.modal-window.modal-window__act,
+[data-modal-window-content].modal-window__act,
+[data-modal-window-group-elm].modal-window__act {
+  display: block;
+}
+.modal-window__a {
+  display: inline-block;
+  color: #fff;
+  transition: all ease-in-out 0.75s
+}
+.modal-window__a:hover {
+  text-shadow: 0 0 10px #0a0;
+  transition: all ease-in-out 0.75s;
+}
+.modal-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 55;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+}
+.modal-window__arw {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 55;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: '66';
+  font-size: 25px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all ease-out 0.75s;
+  background: #000;
+  background: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(255,255,255,1) 100%);
+}
+.modal-window__arw.modal-window__act {
+  display: block;
+}
+.modal-window__arw_l {
+  left: 13px;
+}
+.modal-window__arw_r {
+  right: 13px;
+}
+.modal-window__arw:hover {
+  box-shadow: 0 0 10px #fff;
+  transition: all ease-out 0.75s;
+}
+.modal-window__t {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+}
+.modal-window__td {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 30px;
+}
+.modal-window__wrapper {
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 0 100px #fff;
+  border-radius: 10px;
+  border: 5px solid #000;
+}
+.modal-window__inner {
+  font-family: "75";
+}
+.modal-window__inner img {
+  max-width: 100%;
+  max-height: calc(100vh - 70px);
+}
+.modal-window__close {
+  position: absolute;
+  top: -20px;
+  right: -22px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  line-height: 54px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: '66';
+  font-size: 27px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all linear 0.75s;
+  background: #000;
+  background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+}
+.modal-window__close:hover {
+  box-shadow: 0 0 10px #fff; 
+  line-height: 29px;
+  transition: all ease-out 0.75s;
+}
+.modal-window__content {
+  padding: 25px;
+}
+
+/* ---M O D A L _ W I N D O W */
+
+.gallery {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  background-color: #282a36;
+}
+.gallery__img {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  transition: z-index ease-in 1s, transform ease-in 1s,box-shadow ease-in 1s;
+  position: relative;  
+  z-index: 5;
+}
+.gallery__img:hover {
+  z-index: 6; 
+  transform: scale(1.05);
+  transition: transform ease-in-out 1s,box-shadow ease-in-out 1s;
+  box-shadow: 0 0 20px rgba(0, 170, 0, 1);
+}
+
+/* ===================== +++M E D I A ===================== */
+
+@media (max-width: 1200px){
+  .gallery__img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767px){
+  .modal-window__td {
+    padding: 15px;
+  }
+  .modal-window__arw {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+  }
+  .modal-window__arw_l {
+    left: 5px;
+  }
+  .modal-window__arw_r {
+    right: 5px;
+  }
+  .modal-window__close {
+    top: -12px;
+    right: -13px;
+    width: 24px;
+    height: 24px;
+    line-height: 32px;
+    font-size: 15px;
+  }
+  .modal-window__close:hover {
+    line-height: 17px;
+  }
+  .modal-window__wrapper {
+    border: 3px solid #000;    
+  }
+  .modal-window__inner {
+    font-size: 16px;
+  }
+  .modal-window__content {
+    padding: 15px 10px;
+  }
+  .gallery__img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 479px){
+  .gallery {
+    gap: 10px;
+  }
+  .gallery__img {
+    height: 150px;
+  }
+}
+
+/* ===================== ---M E D I A ===================== */

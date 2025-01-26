@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+  <!-- https://codyhouse.co/demo/animated-svg-image-slider/index.html --- svg смена кадров -->
+<head>
+  <meta charset="UTF-8">
+  <title>S-L-I-D-E-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/3x3.jpg">
+  <link rel="stylesheet" href="css/css.css" />
+  <link rel="stylesheet" href="css/tabs.css" />
+  <link rel="stylesheet" href="css/scrollbar.css" />
+  <link rel="stylesheet" href="css/slider.css" />
+  <script type="text/javascript" src="js/js.js"></script>
+  <script type="text/javascript" src="js/tabs.js"></script>
+  <script type="text/javascript" src="js/scrollbar.js"></script>  
+  <script type="text/javascript" src="js/slider.js"></script>
+</head>
+
+<body>
+  <div class="menu-nav menu-nav__act">
+		<div class="menu-nav__hide"></div>
+		<div class="menu-nav__close">&#x2715;</div>
+		<div class="menu-nav__h">
+			<span class="menu-nav__h-1">Н</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">в</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">г</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">ц</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">я</span>
+			<span class="menu-nav__h-1">:</span>
+		</div>
+		<ul class="menu-nav__ul">
+			<li class="menu-nav__li">
+				<a href="js-slider.html" class="menu-nav__a menu-nav__a-act">Слайдер</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-tabs.html" class="menu-nav__a">Табы</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-scrollbar.html" class="menu-nav__a">Скроллбар</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-carousel.html" class="menu-nav__a">Карусель</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-modal-window.html" class="menu-nav__a">Модальное окно</a>
+			</li>
+		</ul>
+		<a href="portfolio.html#anchor-portfolio" class="menu-nav__a menu-nav__a_1">Обратно на страницу портфолио</a>
+	</div>
+
+	<style>
+			.menu-nav{
+					display: none;
+					position:fixed;
+					top:0;
+					bottom:0;
+					left:0;
+					z-index:9999;
+					margin:auto 20px auto 0;
+					background-color: #282a36;
+					border: 5px solid #0a0;
+					box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+			}
+			.menu-nav__act{
+					display: table;
+			}
+			.menu-nav__hide{
+					color: #fff;
+					position: absolute;
+					bottom: 0;
+					top:0;
+					right: -22px;
+					margin:auto 0;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 38px;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					padding:0 0 0 15px;
+					background: radial-gradient(circle, #000000 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__hide-act .menu-nav__hide{
+					padding:0 0 0 4px;
+			}
+			.menu-nav__hide:before{
+					content:'\2B05';
+			}
+			.menu-nav__hide-act .menu-nav__hide:before{
+					content:'\27A1';
+			}
+			.menu-nav__hide:hover{
+					box-shadow: 0 0 10px #fff;
+					padding:0 0 0 9px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__hide:hover{
+					padding:0 0 0 9px;
+			}
+			.menu-nav__hide-act{
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__ul,
+			.menu-nav__hide-act .menu-nav__a{
+					display: none;
+			}
+			.menu-nav__close{
+					position: absolute;
+					top: -20px;
+					right: -22px;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 54px;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__close:hover{
+					box-shadow: 0 0 10px #fff;
+					line-height: 29px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__h{
+					color:#fff;
+					font-size:20px;
+					text-align: center;
+					margin:10px 0 10px;
+          font-family: "Time New Romans", sans-serif;
+			}
+			.menu-nav__hide-act .menu-nav__h{
+					margin:10px 0 ;
+			}
+			.menu-nav__hide-act .menu-nav__h-1{
+					display: block;
+					padding:0 25px 0 5px;
+					line-height:80%;
+			}
+			.menu-nav__hide-act .menu-nav__h-1:last-child{
+					display: none;
+			}
+			.menu-nav__ul{
+					padding: 0 25px 5px 15px;
+					margin:0 0 0 15px;
+			}
+			.menu-nav__li{
+          font-family: "Time New Romans", sans-serif;
+          font-size: 14px;
+					margin:5px 0 15px;
+					list-style: decimal;
+					color: #fff;
+			}
+			.menu-nav__a{
+					color: #fff;
+					font-family: "Time New Romans", sans-serif;
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 14px;
+					background: #0a0;
+					border-radius: 14px;
+					box-shadow: 0 5px #070;
+					margin:0 0 0 10px;
+					text-decoration: underline;
+			}
+			.menu-nav__a:focus{
+					color: #fff;
+			}
+			.menu-nav .menu-nav__a:hover{
+					color:#fff !important;
+					box-shadow: 0 5px #070, 0px 5px 6px #fff;
+			}
+			.menu-nav__a-act{
+					background: #75f;
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+					cursor:default;
+			}
+			.menu-nav .menu-nav__a-act:hover{
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+			}
+			.menu-nav__a_1{
+				display: block;
+				margin:0 25px 20px 25px;
+				text-align: center;
+			}
+	</style>
+
+	<script>
+		function menuNav(){
+			let container = document.querySelector('.menu-nav');
+			let close = container.querySelector('.menu-nav__close');
+			let hide = container.querySelector('.menu-nav__hide');
+		
+			close.addEventListener('click', () => {
+				[container, ...container.querySelectorAll('.menu-nav__act')].forEach( (elmAct) => {
+					elmAct.classList.remove('menu-nav__act');
+				})
+			})
+
+			hide.addEventListener('click', () => {
+				container.classList.toggle('menu-nav__hide-act');
+			})
+		}
+		menuNav();
+	</script>
+
+
+
+  <div class="container">
+    <h1 class="fs-h1">
+      S-L-I-D-E-R
+    </h1>
+    <div class="fs-w">
+      <span class="fs-w-1">
+        Слайдер — это динамический веб-элемент, который отображает
+        несколько слайдов, обычно с изображениями или с видео-контентом.
+        Между слайдами можно переключаться, также бывают варианты
+        с автоматической прокруткой и кнопками для управления анимацией.
+        <br>
+        Нажатие на стрелки справа\слева показывают следующий\предыдущий слайды.
+        Нажатие на навигацию внизу переключает на соответствующий слайд с
+        тем же номером. На устройствах с поддержкой касания на контенте
+        и пролистывания по горизонтали переключает слайд.
+      </span> 
+    </div>
+  </div> 
+
+  <!-- (.slider__item>.slider__content>.slider__h{Заголовок $}+.slider__txt{Дополнительный текст}+img.slider__img[src="img/$.gif"])*9 -->
+  <div class="container10">
+    <div class="slider" data-slider="slider-1" data-slider-elm="slider__content">      
+      <div class="slider__content">
+        <div class="slider__h">Заголовок 1</div>
+        <img src="img/155.gif" alt="" class="slider__img">
+      </div>
+      <div class="slider__content">
+        <div class="slider__h">Заголовок 2</div>
+        <img src="img/125.gif" alt="" class="slider__img">
+      </div>
+      <div class="slider__content slider__act">
+        <div class="slider__h">Заголовок 3</div>
+        <img src="img/gif245.gif" alt="" class="slider__img">
+      </div>
+      <div class="slider__content">
+        <div class="slider__h">Заголовок 4</div>
+        <img src="img/148.gif" alt="" class="slider__img">
+      </div>
+      <div class="slider__content">
+        <div class="slider__h">Заголовок 5</div>
+        <img src="img/149.gif" alt="" class="slider__img">
+      </div>
+      <div class="slider__content">
+        <div class="slider__h">Заголовок 6</div>
+        <img src="img/gif222.gif" alt="" class="slider__img">
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container">
+    <h2 class="fs-h2">
+      Подробнее
+    </h2>
+    <div class="fs-w1">
+      <h4 class="fs-h4">
+        Гибкость
+      </h4>
+      <ol class="fs-ol fs-ol_1">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            Предусматривает возможность не создавать или перестраивать 
+            структуру html-разметки для скрипта слайдера, 
+            а встраивать в уже существующую разметку
+          </div>
+        </li>      
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            Элементы группы контента могут быть не только картинки,
+             но и почти любой тег с настраиваемым селектором класса
+          </div>
+        </li>
+      </ol>
+
+      <h4 class="fs-h4">
+        Реализация
+      </h4>
+
+      <p class="fs-p">
+        Рендеринг (отрисовка) каркаса слайдера происходит через js.<br>
+        Настройка состоит из добавления тегам нескольких 
+        пользовательских атрибутов.<br>        
+        Настройка (пользовательские атрибуты):
+      </p>
+
+      <ol class="fs-ol">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-slider="slider-1"</b> &mdash;
+            добавляется тегу-контейнеру внутри которого элементы-контент-слайды,
+            значение атрибута равно классу, который на этапе рендеренга 
+            назначится тегу-контейнеру содержащему слайдер, это 
+            способствует гибкой настройке определенного этим 
+            уникальным классом экземпляру слайдера
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-slider-elm="slider__content"</b> &mdash; 
+            добавляется тегу-контейнеру, значение это класс 
+            элементов-контент-слайдов
+          </div>
+        </li>
+      </ol>
+
+      <p class="fs-p">
+        Добавление класса <b class="fs-b">slider__act</b> элементу-контент-слайду
+        делает показ слайдера с него.
+      </p>
+    </div>
+  </div>
+
+
+
+  <div class="container10 container10_0">
+    <h2 class="fs-h2">
+      КОД
+    </h2>
+
+    <div class="code">
+      <div class='tabs__tablist'>
+        <div class='tabs__tab code__tab tabs__act' data-tabs="code-1 btn-1">
+          HTML
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-2">
+          CSS
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-3">
+          JS
+        </div>
+      </div>
+      <div class="code__box">
+        <div class="code__panel tabs__act" data-tabs="code-1 panel-1">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+<div class="slider" data-slider="slider-1" data-slider-elm="slider__content">      
+  <div class="slider__content">
+    <div class="slider__h">Заголовок 1</div>
+    <img src="img/155.gif" alt="" class="slider__img">
+  </div>
+  <div class="slider__content">
+    <div class="slider__h">Заголовок 2</div>
+    <img src="img/125.gif" alt="" class="slider__img">
+  </div>
+  <div class="slider__content slider__act">
+    <div class="slider__h">Заголовок 3</div>
+    <img src="img/gif245.gif" alt="" class="slider__img">
+  </div>
+  <div class="slider__content">
+    <div class="slider__h">Заголовок 4</div>
+    <img src="img/148.gif" alt="" class="slider__img">
+  </div>
+  <div class="slider__content">
+    <div class="slider__h">Заголовок 5</div>
+    <img src="img/149.gif" alt="" class="slider__img">
+  </div>
+  <div class="slider__content">
+    <div class="slider__h">Заголовок 6</div>
+    <img src="img/gif222.gif" alt="" class="slider__img">
+  </div>
+</div>
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-2">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+/* +++S L I D E R */
+
+.slider {
+  position: relative;
+  z-index: 5;
+}
+.slider__wrapper {
+  height: 800px;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+.slider__items {
+  height: 100%;
+}
+.slider__item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity linear 1s;
+}
+.slider__item.slider__act {
+  z-index: 6;
+  opacity: 1;
+  transition: opacity linear 1s;
+}
+.slider__arw {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 16;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: '66';
+  font-size: 25px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all ease-out 0.75s;
+  background: #000;
+  background: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(255,255,255,1) 100%);
+  user-select: none;
+}
+.slider__arw:hover {
+  box-shadow: 0 0 10px #fff;
+  transition: all ease-out 0.75s;
+}
+.slider__arw_l {
+  left: 15px;
+}
+.slider__arw_r {
+  right: 15px;
+}
+.slider__dots {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 49px;
+  z-index: 15;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.slider__dot {
+  margin: 10px 5px 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all ease-out 0.75s;
+  background: #000;
+  background: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(255,255,255,1) 100%);
+  user-select: none;
+}
+.slider__dot:hover {
+  box-shadow: 0 0 10px #fff;
+  transition: all ease-out 0.75s;
+}
+.slider__dot.slider__act {
+  background:#fff;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 10%, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+}
+.slider__dot.slider__act:hover {
+  transition: none;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* ---S L I D E R */
+
+.slider__content {
+  height: 100%;
+  background: #282a36;
+}
+.slider__h {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 15px;
+  z-index: 6;
+  font-size: 1.5em;
+  font-family: "75";
+  text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+.slider__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: z-index ease-in 1s, transform ease-in 1s, box-shadow ease-in 1s;
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 767px){
+  .slider__wrapper {
+    height: 500px;
+  }
+  .slider__arw {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+  }        
+  .slider__arw_l {
+    left: 5px;
+  }
+  .slider__arw_r {
+    right: 5px;
+  }
+  .slider__dot {
+    width: 12px;
+    height: 12px;
+  }
+  .slider__h {
+    padding: 5px;
+  }
+}
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-3">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+// +++S L I D E R
+
+function slider() {
+
+  let sliderElms = document.querySelectorAll('[data-slider]');
+
+  function render(){	
+    sliderElms.forEach((elmSlider) => {	
+      let sliderClass = elmSlider.getAttribute('data-slider');
+      let sliderElmClass = elmSlider.getAttribute('data-slider-elm');
+      let sliderElms = elmSlider.querySelectorAll('.'+sliderElmClass);
+      let partItems = '';
+      let partDots = '';
+      let sliderElmAct;
+
+      for(let i = 0; i < sliderElms.length; i++){
+        sliderElmAct = '';
+        if(sliderElms[i].classList.contains('slider__act')){
+          sliderElms[i].classList.remove('slider__act');
+          sliderElmAct = 'slider__act';
+        }
+        partDots += ' <div class="slider__dot '+ sliderElmAct +'"></div>\n';
+        partItems += '<div class="slider__item '+ sliderElmAct +'">';
+        partItems += sliderElms[i].outerHTML;
+        partItems += '</div>';
+      }
+
+      let html = '<div class="'+ sliderClass +' slider" data-slider="">\n\
+                    <div class="slider__wrapper">\n\
+                      <div class="slider__items">\n\
+                        ' + partItems + '\n\
+                      </div>\n\
+                      <div class="slider__arws">\n\
+                        <div class="slider__arw slider__arw_l">&lt;</div>\n\
+                        <div class="slider__arw slider__arw_r">&gt;</div>\n\
+                      </div>\n\
+                      <div class="slider__dots">\n\
+                        ' + partDots + '\n\
+                      </div>\n\
+                    </div>\n\
+                  </div>';
+                  
+      elmSlider.outerHTML = html;	
+    })
+  }
+  render();
+
+  sliderElms = document.querySelectorAll('[data-slider]');
+
+  sliderElms.forEach((elmSlider) => {
+    let itemsC = elmSlider.querySelector('.slider__items');
+    let items = elmSlider.querySelectorAll('.slider__item');
+    let itemActId = 0;
+    let arwL = elmSlider.querySelector('.slider__arw_l');	
+    let arwR = elmSlider.querySelector('.slider__arw_r');	
+    let dotsC = elmSlider.querySelector('.slider__dots');
+    let dots = elmSlider.querySelectorAll('.slider__dot');	
+    let optLoop = true;	
+    let optAutoplay = true;
+    let optInterval = 5000;
+    let intervalId;
+    let startX,endX;
+    
+    itemActId = Array.prototype.indexOf.call(items,itemsC.querySelector('.slider__act'));
+
+    itemsC.addEventListener('touchstart', (evItemsC) => {
+      startX = evItemsC.targetTouches[0].clientX;
+    })
+
+    itemsC.addEventListener('touchend', (evItemsC) => {
+      endX = evItemsC.changedTouches[0].clientX
+      if(startX < endX){
+        arwR.click();
+      }else{
+        arwL.click();
+      }
+    })
+
+    arwL.addEventListener('click', () => {
+      autoplay();
+      if(itemActId - 1 > -1){
+        items[itemActId].classList.remove('slider__act');
+        dots[itemActId].classList.remove('slider__act');
+        --itemActId;
+        items[itemActId].classList.add('slider__act');
+        dots[itemActId].classList.add('slider__act');
+      }else if(optLoop){
+        items[itemActId].classList.remove('slider__act');
+        dots[itemActId].classList.remove('slider__act');
+        itemActId = items.length - 1;
+        items[itemActId].classList.add('slider__act');				
+        dots[itemActId].classList.add('slider__act');
+      }
+    })
+
+    arwR.addEventListener('click', () => {
+      autoplay();
+      if(itemActId + 1 < items.length){
+        items[itemActId].classList.remove('slider__act');
+        dots[itemActId].classList.remove('slider__act');
+        ++itemActId;
+        items[itemActId].classList.add('slider__act');
+        dots[itemActId].classList.add('slider__act');
+      }else if(optLoop){
+        items[itemActId].classList.remove('slider__act');
+        dots[itemActId].classList.remove('slider__act');
+        itemActId = 0;
+        items[itemActId].classList.add('slider__act');				
+        dots[itemActId].classList.add('slider__act');
+      }
+    })
+
+    dots.forEach((elmDot) => {
+      elmDot.addEventListener('click', () => {		
+          autoplay();					
+          itemsC.querySelector('.slider__act').classList.remove('slider__act');
+          dotsC.querySelector('.slider__act').classList.remove('slider__act');					
+          itemActId = Array.prototype.indexOf.call(dots,elmDot);
+          items[itemActId].classList.add('slider__act');
+          dots[itemActId].classList.add('slider__act');
+      })
+    })
+
+    
+
+    function autoplay(){
+      if(optAutoplay){
+        clearInterval(intervalId);
+        intervalId = setInterval(() => {
+          arwR.click();
+        },optInterval)
+      }
+    }
+    autoplay();		
+  })
+}
+
+// ---S L I D E R
+
+document.addEventListener('DOMContentLoaded', () => {
+  slider();
+})
+            </code>
+          </div>  
+        </div>  
+      </div>
+    </div>
+</body>
+</html>

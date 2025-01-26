@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' type='text/css' href='css/css.css' />
+	<script type='text/javascript' src='js/js.js'></script>
+</head>
+<body>
+	<div class="menu-nav menu-nav__act">
+		<div class="menu-nav__hide"></div>
+		<div class="menu-nav__close">&#x2715;</div>
+		<div class="menu-nav__h">
+			<span class="menu-nav__h-1">Н</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">в</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">г</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">ц</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">я</span>
+			<span class="menu-nav__h-1">:</span>
+		</div>
+		<a href="../../portfolio.html#anchor-portfolio" class="menu-nav__a menu-nav__a_1">Обратно на страницу портфолио</a>
+	</div>
+
+	<style>
+			.menu-nav{
+					display: none;
+					position:fixed;
+					top:0;
+					bottom:0;
+					left:0;
+					z-index:9999;
+					margin:auto 20px auto 0;
+					background-color: #282a36;
+					border: 5px solid #0a0;
+					box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+			}
+			.menu-nav__act{
+					display: table;
+			}
+			.menu-nav__hide{
+					color: #fff;
+					position: absolute;
+					bottom: 0;
+					top:0;
+					right: -22px;
+					margin:auto 0;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 38px;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					padding:0 0 0 15px;
+					background: radial-gradient(circle, #000000 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__hide-act .menu-nav__hide{
+					padding:0 0 0 4px;
+			}
+			.menu-nav__hide:before{
+					content:'\2B05';
+			}
+			.menu-nav__hide-act .menu-nav__hide:before{
+					content:'\27A1';
+			}
+			.menu-nav__hide:hover{
+					box-shadow: 0 0 10px #fff;
+					padding:0 0 0 9px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__hide:hover{
+					padding:0 0 0 9px;
+			}
+			.menu-nav__hide-act{
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__ul,
+			.menu-nav__hide-act .menu-nav__a{
+					display: none;
+			}
+			.menu-nav__close{
+					position: absolute;
+					top: -20px;
+					right: -22px;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 54px;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__close:hover{
+					box-shadow: 0 0 10px #fff;
+					line-height: 29px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__h{
+					color:#fff;
+					font-size:20px;
+					text-align: center;
+					margin:10px 0 10px;
+			}
+			.menu-nav__hide-act .menu-nav__h{
+					margin:10px 0 ;
+			}
+			.menu-nav__hide-act .menu-nav__h-1{
+					display: block;
+					padding:0 25px 0 5px;
+					line-height:80%;
+			}
+			.menu-nav__hide-act .menu-nav__h-1:last-child{
+					display: none;
+			}
+			.menu-nav__ul{
+					padding: 0 25px 5px 15px;
+					margin:0 0 0 15px;
+			}
+			.menu-nav__li{
+					margin:5px 0 15px;
+					list-style: decimal;
+					color: #fff;
+			}
+			.menu-nav__a{
+					color: #fff;
+					font-family: "Time New Romans", sans-serif;
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 14px;
+					background: #0a0;
+					border-radius: 14px;
+					box-shadow: 0 5px #070;
+					margin:0 0 0 10px;
+					text-decoration: underline;
+			}
+			.menu-nav__a:focus{
+					color: #fff;
+			}
+			.menu-nav .menu-nav__a:hover{
+					color:#fff !important;
+					box-shadow: 0 5px #070, 0px 5px 6px #fff;
+			}
+			.menu-nav__a-act{
+					background: #75f;
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+					cursor:default;
+			}
+			.menu-nav .menu-nav__a-act:hover{
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+			}
+			.menu-nav__a_1{
+				display: block;
+				margin:0 25px 20px 25px;
+				text-align: center;
+			}
+	</style>
+
+	<script>
+		function menuNav(){
+			let container = document.querySelector('.menu-nav');
+			let close = container.querySelector('.menu-nav__close');
+			let hide = container.querySelector('.menu-nav__hide');
+		
+			close.addEventListener('click', () => {
+				[container, ...container.querySelectorAll('.menu-nav__act')].forEach( (elmAct) => {
+					elmAct.classList.remove('menu-nav__act');
+				})
+			})
+
+			hide.addEventListener('click', () => {
+				container.classList.toggle('menu-nav__hide-act');
+			})
+		}
+		menuNav();
+	</script>
+
+
+
+<div class='b0' id='myScrollingSurface'>
+	<header class='hr c'>
+		<div class='hr1'>
+			<div class='hr1-c c1'>
+				<div class='hr1-menu-close'></div>
+				<div class='hr1-t'>
+					<div class='hr1-td'>
+						<img class='hr1-logo-f' src='img/logo.svg' alt='Result. estate'>
+						<div class='hr1-logo-w'>
+							Продажа и покупка 
+							<div class='hr1-logo-br'></div>
+							недвижимости в Минске
+						</div>
+					</div>
+					<div class='hr1-td'>
+						<ul class='hr1-menu'>
+							<li class='hr1-menu-li'>
+								<a class='hr1-menu-a' href=''>
+									Продать объект
+								</a>
+							</li>
+							<li class='hr1-menu-li'>
+								<a class='hr1-menu-a' href=''>
+									Купить обьект
+								</a>
+							</li>
+							<li class='hr1-menu-li'>
+								<a class='hr1-menu-a' href=''>
+									Отзывы
+								</a>
+							</li>
+							<li class='hr1-menu-li'>
+								<a class='hr1-menu-a' href=''>
+									Контакты
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class='hr1-td'>
+						<div class='hr1-f-c'>
+							<img class='hr1-f' src='img/yandex.svg' alt=''>
+						</div>
+					</div>	
+					<div class='hr1-td'>
+						<div class='hr1-a-c'>
+							<a class='hr1-a' href=''>
+								<img class='img' src='img/i-instagram.svg' alt=''>
+							</a>	
+							<a class='hr1-a' href=''>
+								<img class='img' src='img/i-telegram.svg' alt=''>
+							</a>
+						</div>
+						<a class='hr1-bn bn bnA' href='tel:+375291885598'>
+							<span class='hr1-bn-1 bnA-1'>
+								Перезвоните мне
+							</span>	
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class='b1 c1'>
+			<div class='b1-t'>
+				<div class='b1-td'>
+					<h1 class='b1-h a-w-lr0'>
+						ПАРК ЧЕЛЮСКИНЦЕВ
+					</h1>
+					<div class='b1-w a-w-lr0'>
+						Новая жизнь в окружении природы
+					</div>
+					<a class='b1-bn bn1 bnA' href='index.html#b6'>
+						<span class='b1-bn-1 bnA-1'>
+							Смотреть планировки
+						</span>	
+					</a>
+				</div>
+				<div class='b1-td'>
+					<div class="b1_video-c0">
+						<div class="b1_video-c">
+							<div class='b1_video-h'>
+								ОБЗОР НА ЖИЛОЙ КОМПЛЕКС
+							</div>
+							<video id="video1" class="b1_video" src="video/test.mp4" poster="img/b1-2.jpg"></video>
+							<div class="b1_video-play-c">
+								<button id="video1_play" class="b1_video-play" onclick="vidplay1()"></button>
+								<div class="b1_video-bg"></div>
+							</div>    
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	
+	
+	<main class='mn'>
+		<div class='b2 c'>
+			<h2 class='b2-h a-prx1'>
+				<span class='a-w-lr0-dib a-w-lr0'>
+					ВАРИАНТЫ НЕДВИЖИМОСТИ
+				</span>	
+			</h2>
+			
+			<div class='b2-t'>
+				<div class='b2-td'>
+					<div class='b2-h1'>
+						МАЛОЭТАЖНЫЕ ДОМА
+					</div>
+					<div class='b2-b'>
+						<div class='b2-b1'>
+							<div class='b2-h2'>
+								МАЛОЭТАЖНЫЕ ДОМА
+							</div>
+							<div class='b2-w b2-w_1'>
+								Малоэтажные дома &minus; это идеальное сочетание городского комфорта и уюта.
+							</div>
+						</div>	
+						<div class='b2-h3'>
+							МАЛОЭТАЖНЫЕ ДОМА
+						</div>
+					</div>
+				</div>
+				<div class='b2-td'>
+					<div class='b2-h1'>
+						ВЫСОКОЭТАЖНЫЕ ДОМА
+					</div>
+					<div class='b2-b'>
+						<div class='b2-b1'>
+							<div class='b2-h2'>
+								ВЫСОКОЭТАЖНЫЕ ДОМА
+							</div>
+							<div class='b2-w b2-w_2'>
+								Высокоэтажные дома &minus; это захватывающие панорамные виды
+								и меньшее количество шума.
+							</div>
+						</div>	
+						<div class='b2-h3'>
+							ВЫСОКОЭТАЖНЫЕ ДОМА
+						</div>
+					</div>
+				</div>
+				<div class='b2-td'>
+					<div class='b2-h1'>
+						КВАРТИРЫ С ТЕРРАСОЙ
+					</div>
+					<div class='b2-b'>
+						<div class='b2-b1'>
+							<div class='b2-h2'>
+								КВАРТИРЫ С ТЕРРАСОЙ
+							</div>
+							<div class='b2-w b2-w_3'>
+								Квартиры с террасами предлагают уникальное сочетание комфорта
+								жилья и открытого пространства для отдыха и развлечений,
+								обеспечивая жителям возможность наслаждаться свежим воздухом
+								и панорамным видам прямо у себя дома.
+							</div>
+						</div>	
+						<div class='b2-h3'>
+							КВАРТИРЫ С ТЕРРАСОЙ
+						</div>
+					</div>
+				</div>
+				<div class='b2-td'>
+					<div class='b2-h1'>
+						ПАРКИНГИ
+					</div>
+					<div class='b2-b'>
+						<div class='b2-b1'>
+							<div class='b2-h2'>
+								ПАРКИНГИ
+							</div>
+							<div class='b2-w b2-w_4'>
+								Паркинг в домах обеспечивает удобство и доступность для жильцов,
+								сохраняя автомобили в безопасности и близости от жилья.
+							</div>
+						</div>
+						<div class='b2-h3'>
+							ПАРКИНГИ
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class='b2-bn-c'>
+				<span class='b2-bn bn bnA' data-box-bn='box1'>
+					<span class='b2-bn-1 bnA-1'>
+						Получить консультацию
+					</span>	
+				</span>
+			</div>
+		</div>
+		
+		
+		
+		<div class='b3 c'>
+			<div class='b3-c c1'>
+				<div class='b3-h a-w-lr0'>
+					ПОДОБРАТЬ СВОБОДНУЮ КВАРТИРУ
+				</div>
+				<form class='b3-fm'>
+					<div class='b3-t'>
+						<div class='b3-td'>
+							<div class='b3-h1'>
+								Номера домов
+							</div>
+							<div class='b3-inp-c'>
+								<label class='b3-inp-c1'>
+									<input class='b3-inp' name='b3-inp-1' type='checkbox'/>
+									<span class='b3-inp-w'>
+										1
+									</span>	
+								</label>
+								<label class='b3-inp-c1'>
+									<input class='b3-inp' name='b3-inp-2' type='checkbox'/>
+									<span class='b3-inp-w'>
+										2
+									</span>
+								</label>
+								<label class='b3-inp-c1'>
+									<input class='b3-inp' name='b3-inp-3' type='checkbox'/>
+									<span class='b3-inp-w'>
+										3
+									</span>
+								</label>
+								<label class='b3-inp-c1'>
+									<input class='b3-inp' name='b3-inp-4' type='checkbox'/>
+									<span class='b3-inp-w'>
+										4
+									</span>
+								</label>
+								<label class='b3-inp-c1'>
+									<input class='b3-inp' name='b3-inp-5' type='checkbox'/>
+									<span class='b3-inp-w'>
+										5
+									</span>
+								</label>
+								<label class='b3-inp-c1'>
+									<input class='b3-inp' name='b3-inp-6' type='checkbox'/>
+									<span class='b3-inp-w'>
+										6
+									</span>
+								</label>
+								<label class='b3-inp-c1'>
+									<input class='b3-inp' name='b3-inp-7' type='checkbox'/>
+									<span class='b3-inp-w'>
+										7
+									</span>
+								</label>
+							</div>
+						</div>
+						
+						<div class='b3-td'>
+							<div class='slt box3-slt'>
+								<div class='slt-t'>
+									<select class='slt-s'>
+										<option class='slt-s-e' selected>
+											1
+										</option>
+										<option class='slt-s-e'>
+											2
+										</option>
+									</select>
+									<div class='slt-n-c'>
+										<div class='slt-n'>
+											<div class='slt-n-e act'>
+												Этаж дома
+											</div>
+											<div class='slt-n-e'>1</div>
+											<div class='slt-n-e'>2</div>
+											<div class='slt-n-e'>3</div>
+											<div class='slt-n-e'>4</div>
+											<div class='slt-n-e'>5</div>
+											<div class='slt-n-e'>6</div>
+											<div class='slt-n-e'>7</div>
+											<div class='slt-n-e'>8</div>
+											<div class='slt-n-e'>9</div>
+											<div class='slt-n-e'>10</div>
+											<div class='slt-n-e'>11</div>
+											<div class='slt-n-e'>12</div>
+											<div class='slt-n-e'>13</div>
+											<div class='slt-n-e'>14</div>
+											<div class='slt-n-e'>15</div>
+											<div class='slt-n-e'>16</div>
+											<div class='slt-n-e'>17</div>
+											<div class='slt-n-e'>18</div>
+											<div class='slt-n-e'>19</div>
+											<div class='slt-n-e'>20</div>
+											<div class='slt-n-e'>21</div>
+											<div class='slt-n-e'>22</div>
+											<div class='slt-n-e'>23</div>
+											<div class='slt-n-e'>24</div>
+											<div class='slt-n-e'>25</div>
+										</div>
+									</div>	
+								</div>
+							</div>
+							
+							<div class='b3-h1'>
+								Количество комнат
+							</div>
+							<div class='b3-inp1-c'>
+								<div class='b3-inp1-c1'>
+									<input class='b3-inp1' name='b3-inp1-1' type='checkbox'/>
+									<span class='b3-inp1-w'>
+										1
+									</span>	
+								</div>
+								<div class='b3-inp1-c1'>
+									<input class='b3-inp1' name='b3-inp1-2' type='checkbox'/>
+									<span class='b3-inp1-w'>
+										2
+									</span>	
+								</div>
+								<div class='b3-inp1-c1'>
+									<input class='b3-inp1' name='b3-inp1-3' type='checkbox'/>
+									<span class='b3-inp1-w'>
+										3
+									</span>	
+								</div>
+								<div class='b3-inp1-c1'>
+									<input class='b3-inp1' name='b3-inp1-4' type='checkbox'/>
+									<span class='b3-inp1-w'>
+										4
+									</span>	
+								</div>
+							</div>
+							
+							<div class='b3-h1'>
+								Площадь, м²
+							</div>
+							<div class="rslr">
+								<div class="rslr-values">
+									<span class="rslr-range rslr-range1">
+										0
+									</span>
+									<span class="rslr-range rslr-range2">
+										100
+									</span>
+								</div>
+								<div class="rslr-container">
+									<div class="rslr-track"></div>
+									<input class="rslr-1" type="range" min="0" max="100" value="0">
+									<input class="rslr-2" type="range" min="0" max="100" value="100">
+								</div>
+							</div>
+							
+							<div class='b3-h1'>
+								Цена, $
+							</div>
+							<div class="rslr">
+								<div class="rslr-values">
+									<span class="rslr-range rslr-range1">
+										58164
+									</span>
+									<span class="rslr-range rslr-range2">
+										200000
+									</span>
+								</div>
+								<div class="rslr-container">
+									<div class="rslr-track"></div>
+									<input class="rslr-1" type="range" min="58164" max="200000" value="58164">
+									<input class="rslr-2" type="range" min="58164" max="200000" value="200000">
+								</div>
+							</div>
+
+							<div class='b3-bn-c'>
+								<button class='b3-bn1 bn' type='reset'>
+									<span class='b3-bn-1'>
+										Сбросить
+									</span>
+								</button>
+								<span class='b3-bn2 bn bnA' data-box-bn="box1">
+									<span class='b3-bn-1 bnA-1'>
+										Подобрать варианты
+									</span>
+								</span>
+							</div>
+						</div>
+						
+						<div class='b3-td'>
+							<div class='b3-f-c'>
+								<img class='b3-f' src='img/b3-1.jpg' alt=''/>
+							</div>
+						</div>
+					</div>
+				</form>	
+			</div>
+		</div>
+		
+		
+		
+		<div class='b4 c1'>
+			<div class='b4-t'>
+				<div class='b4-td a-w-lr0'>
+					<div class='b4-b'>
+						<div class='b4-h'>
+							О Парке Челюскинцев 
+						</div>
+						<div class='b4-w'>
+							Жилой комплекс Парк Челюскинцев идеально
+							расположен на пр. Независимости около Парка 
+							Челюскинцев и Ботанического сада.
+							<div class='b4-sep'></div>
+							Жилой комплекс Парк Челюскинцев.
+							<div class='b4-sep'></div>
+							Жизнь в окружении природы.
+						</div>
+					</div>	
+					<div class='b4-w1'>
+						<a class='b4-a' href='tel:+375291885598'>
+							+375 (29) 188-55-98
+						</a>
+						<div class='b4-sep1'></div>
+						(получить консультацию)
+						<div class='b4-w1-1'>
+							<span class='b4-w1-1-1'>
+								ЛИБО ПРИЕХАТЬ ПО АДРЕСУ Г. МИНСК, УЛ. ДЗЕРЖИНСКОГО, 9
+							</span>	
+						</div>
+					</div>
+				</div>
+				<div class='b4-td'>
+					<img class='b4-f' src='img/b4-1.jpg' alt=''/>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class='b5 c'>
+			<div class='b5-h a-prx1'>
+				<div class='b5-h-1 c1'>
+					<span class='a-w-lr0-dib a-w-lr0'>
+						ПРЕИМУЩЕСТВА ЖИЛОГО КОМПЛЕКСА
+					</span>	
+				</div>	
+			</div>
+			<div class='b5-c c1'>
+				<div class='b5-t'>
+					<div class='b5-td a-w-lr0'>
+						<img class='b5-f' src='img/b5-1.png' alt=''/>
+						<div class='b5-w'>
+							детские и спортивные площадки
+						</div>
+					</div>
+					<div class='b5-td a-w-lr0'>
+						<img class='b5-f' src='img/b5-2.png' alt=''/>
+						<div class='b5-w'>
+							Квартиры с террасами
+						</div>
+					</div>
+					<div class='b5-td a-w-lr0'>
+						<img class='b5-f' src='img/b5-3.png' alt=''/>
+						<div class='b5-w'>
+							ПОДЗЕМНЫЙ ПАРКИНГ И ОТКРЫТЫЕ АВТОСТОЯНКИ
+						</div>
+					</div>
+					<div class='b5-td a-w-lr0'>
+						<img class='b5-f' src='img/b5-4.png' alt=''/>
+						<div class='b5-w'>
+							РАЗВИТАЯ ИНФРАСТРУКТА
+						</div>
+					</div>
+					<div class='b5-td a-w-lr0'>
+						<img class='b5-f' src='img/b5-5.png' alt=''/>
+						<div class='b5-w'>
+							2 детских садика
+						</div>
+					</div>
+					<div class='b5-td a-w-lr0'>
+						<img class='b5-f' src='img/b5-6.png' alt=''/>
+						<div class='b5-w'>
+							МЕТРО В ШАГОВОЙ ДОСТУПНОСТИ
+						</div>
+					</div>
+					<div class='b5-td a-w-lr0'>
+						<img class='b5-f' src='img/b5-7.png' alt=''/>
+						<div class='b5-w'>
+							ПАРК РЯДОМ
+						</div>
+					</div>
+					<div class='b5-td a-w-lr0'>
+						<img class='b5-f' src='img/b5-8.png' alt=''/>
+						<div class='b5-w'>
+							СОВРЕМЕННАЯ АРХИТЕКТУРА
+						</div>
+					</div>
+				</div>
+			</div>	
+			
+			
+			
+			<div class='b5-map-c'>
+				<img class='b5-map' src='img/b5-map.jpg' alt='' data-box-bn='b5-map'/>
+			</div>
+		</div>
+		
+		
+		
+		<div class='b6 c' id='b6'>
+			<div class='b6-h a-prx1'>
+				<div class='b6-h-1 c1'>
+					<span class='a-w-lr0-dib a-w-lr0'>
+						ВАРИАНТЫ ПЛАНИРОВОК
+					</span>	
+				</div>	
+			</div>
+			<div class='b6-c'>
+				<div class='b6-c1 c1'>
+					<div class='b6-t'>
+						<div class='b6-td'>
+							<div class='crl'>
+								<div class='crl-m-f-c'>
+									<img class='crl-m-f' src='img/b6-1.jpg' alt='' data-box-bn='crl-m-f'/>
+								</div>
+								<div class='crl-s-c'>
+									<div class='crl-ars-c'>
+										<img class='crl-arw crl-arw-l' src='img/crl-arw-l.svg' alt=''/>
+										<img class='crl-arw crl-arw-r' src='img/crl-arw-r.svg' alt=''/>
+									</div>
+									<div class='crl-s-t'>
+										<div class='crl-s-td'>
+											<img class='crl-s-f' src='img/b6-1.jpg' alt=''/>
+										</div>
+										<div class='crl-s-td'>
+											<img class='crl-s-f' src='img/b6-2.jpg' alt=''/>
+										</div>
+										<div class='crl-s-td'>
+											<img class='crl-s-f' src='img/b6-3.jpg' alt=''/>
+										</div>
+										<div class='crl-s-td'>
+											<img class='crl-s-f' src='img/b6-4.jpg' alt=''/>
+										</div>
+										<div class='crl-s-td'>
+											<img class='crl-s-f' src='img/b6-5.jpg' alt=''/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class='b6-td'>
+							<div class='b6-td1 a-w-lr0'>
+								<div class='b6-h1'>
+									КОМПЛЕКС “ПАРК ЧЕЛЮСКИНЦЕВ”
+								</div>
+								<div class='b6-w'>
+									Жизнь в окружении природы.
+								</div>
+								<div class='b6-w'>
+									Мы уверены, что жилой комплекс «Парк 
+									Челюскинцев» подарит своим жителям много 
+									счастливых лет!
+								</div>
+								<div class='b6-w b6-w_1'>
+									ВСЕ КВАРТИРЫ НА МОМЕНТ ВВОДА СДАЧИ ДОМА
+									ВВОДЯТСЯ СО СВОБОДНОЙ ПЛАНИРОВКОЙ.
+								</div>
+								<div class='b6-w b6-w_2'>
+									Примечание: все размеры, материалы и чертежи даны 
+									условно. Площади указаны без учета внутренних 
+									перегородок. Все расчеты произведены с учетом норм и
+									требований РБ.
+								</div>
+							</div>	
+							<div class='b6-td1'>
+								<span class='b6-bn bn bnA' data-box-bn="box1">
+									<span class='b6-bn-1 bnA-1'>
+										Записаться на консультацию
+									</span>
+								</span>
+							</div>	
+						</div>
+						<div class='b6-td'>
+							<a class='b6-bn bn bnA' href='#'>
+								<span class='b6-bn-1 bnA-1'>
+									Записаться на консультацию
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+		
+		
+		<div class='b7 c'>
+			<div class='b7-h a-prx1'>
+				<div class='b7-h-1 c1'>
+					<span class='a-w-lr0-dib a-w-lr0'>
+						ЗДЕСЬ ЕСТЬ ВСЁ ДЛЯ КОМФОРТНОЙ ЖИЗНИ
+					</span>	
+				</div>	
+			</div>
+			<div class='b7-c c1' data-tabs>
+				<div class='b7-t'>
+					<div class='b7-td a-w-lr0'>
+						<div class='b7-w'>
+							«Парк Челюскинцев» - это высокий уровень комфорта и
+							заботы о каждом аспекте жизни современного
+							человека
+						</div>
+					</div>
+					<div class='b7-td'>
+						<img class='b7-f' src='img/b7-3.jpg' alt=''/>
+					</div>
+				</div>
+				
+				<div class='b7-t1-c'>
+					<div class='b7-t1' data-tabs-btns='tabs1-btns'>
+						<div class='b7-td1 b7-td1_1' data-tabs-btn='tabs1-bn1' data-tabs-btn-f='img/b7-tab-1.jpg' data-box-bn-href='b7-f1-1'>
+							Архитектура
+						</div>
+						<div class='b7-td1 b7-td1_2' data-tabs-btn='tabs1-bn2' data-tabs-btn-f='img/b7-tab-2.jpg' data-box-bn-href='b7-f1-2'>
+							Подъезды
+						</div>
+						<div class='b7-td1 b7-td1_2' data-tabs-btn='tabs1-bn3' data-tabs-btn-f='img/b7-tab-3.jpg' data-box-bn-href='b7-f1-3'>
+							Детские площадки
+						</div>
+						<div class='b7-td1 b7-td1_2' data-tabs-btn='tabs1-bn4' data-tabs-btn-f='img/b7-tab-4.jpg' data-box-bn-href='b7-f1-4'>
+							Спорт
+						</div>
+						<div class='b7-td1 b7-td1_2' data-tabs-btn='tabs1-bn5' data-tabs-btn-f='img/b7-tab-5.jpg' data-box-bn-href='b7-f1-5'>
+							Благоустройство
+						</div>
+					</div>
+				</div>	
+				
+				<div class='b7-f1-c'>
+					<img class='b7-f1' src='img/b7-tab-1.jpg' data-tabs-f='tabs1' alt='' data-box-bn='b7-f1-1'/>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class='b8 c'>
+			<div class='b8-c c1'>
+				<div class='b8-h a-w-lr0'>
+					КВАРТИРЫ ОТ СОБСТВЕННИКА
+					<div class='b8-sep'></div>
+					В ЖК «ПАРК ЧЕЛЮСКИНЦЕВ»
+				</div>
+				<div class='b8-t'>
+					<div class='b8-td'>
+						<img class='b8-f' src='img/b8-1.jpg' alt=''/>
+					</div>
+					<div class='b8-td'>
+						<img class='b8-f1' src='img/b8-2.jpg' alt=''/>
+					</div>
+					<div class='b8-td'>
+						<img class='b8-f' src='img/b8-3.jpg' alt=''/>
+					</div>
+					<div class='b8-td a-w-lr0'>
+						<div class='b8-h1'>
+							ЗДЕСЬ МОЖЕТ БЫТЬ ВАША КВАРТИРА!
+						</div>
+						<div class='b8-w'>
+							У нас уже есть покупатели на Вашу квартиру! 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class='b9 c'>
+			<div class='b9-c c1'>
+				<form class='b9-fm'>
+					<div class='b9-h a-w-lr0'>
+						Здесь можно оставить вашу заявку
+					</div>
+					<div class='b9-t'>
+						<div class='b9-td'>
+							<input class='b9-inp' type='text' placeholder='Ваше имя' required/>
+						</div>
+						<div class='b9-td'>
+							<div class='slt'>
+								<div class='slt-t'>
+									<div class='slt-td'>
+										<select class='slt-s'>
+											<option class='slt-s-e' selected>
+												1
+											</option>
+											<option class='slt-s-e'>
+												2
+											</option>
+										</select>
+										<div class='slt-n-c'>
+											<div class='slt-n'>
+												<div class='slt-n-e act'>
+													<img class='slt-f' src='img/flag-1.jpg' alt=''/>
+													<span class='slt-n-e-1'>
+														+375
+													</span>	
+												</div>
+												<div class='slt-n-e'>
+													<img class='slt-f' src='img/flag-1.jpg' alt=''/>
+													<span class='slt-n-e-1'>
+														+375
+													</span>
+												</div>
+											</div>
+										</div>	
+									</div>
+									<div class='slt-td'>
+										<span class='slt-part'>
+											+375
+										</span>
+									</div>
+									<div class='slt-td'>
+										<input class='slt-inp tel' type='text' placeholder='(_) ___-__-__'/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='b9-td'>
+							<button class='b9-bn bn bnA' type='submit'>
+								<span class='b9-bn-1 bnA-1'>
+									Оставить заявку
+								</span>	
+							</button>
+						</div>
+					</div>
+					
+					<label class='b9-t1'>
+						<input class='b9-inp1' type='checkbox'/>
+						<span class='b9-inp1-n'></span>
+						<span class='b9-td1'>
+							Я согласен с условиями обработки
+							<a class='b9-inp1-a' href='#'>персональных данных</a><span class='b9-inp1-w'>.</span>
+						</span>
+					</label>
+					
+					<div class='b9-t2'>
+						<div class='b9-td2'>
+							Удобно в мессенджере? Пишите, ответим там:
+						</div>
+						<div class='b9-td2'>
+							<a class='b9-a' href='#'>
+								<svg class='b9-f' width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M27.9765 2.42344C28.1947 0.812495 26.8545 -0.459033 25.6011 0.169851L0.638431 12.6955C-0.26035 13.1465 -0.194607 14.7024 0.737567 15.0416L5.88551 16.9152C6.86802 17.2728 7.93192 17.0879 8.78988 16.4105L20.3962 7.24641C20.7462 6.97006 21.1277 7.53878 20.8287 7.89112L12.4742 17.7352C11.6638 18.6901 11.8246 20.3082 12.7994 21.0068L22.1532 27.7104C23.2023 28.4623 24.5519 27.707 24.7482 26.2582L27.9765 2.42344Z" fill="white"/>
+								</svg>
+							</a>
+						</div>
+						<div class='b9-td2'>
+							<a class='b9-a' href='#'>
+								<svg class='b9-f' width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M28.0704 10.3846C27.8362 9.78147 27.5563 9.35067 27.104 8.89832C26.6518 8.44598 26.2211 8.16596 25.6181 7.93171C25.1632 7.754 24.4795 7.54399 23.2196 7.48745C21.8575 7.42552 21.4484 7.41206 17.9974 7.41206C17.5667 7.41206 17.1817 7.41206 16.8372 7.41206C14.4279 7.41206 13.9676 7.42821 12.7751 7.48206C11.5153 7.5386 10.8316 7.74862 10.3766 7.92633C9.77364 8.16057 9.34293 8.4406 8.8907 8.89294C8.43846 9.34528 8.1585 9.77608 7.92431 10.3792C7.74664 10.8342 7.53667 11.5181 7.48014 12.7782C7.41823 14.1406 7.40477 14.5472 7.40477 17.999C7.40477 21.4508 7.41823 21.8601 7.48014 23.2225C7.53667 24.4826 7.74933 25.1665 7.92431 25.6215C8.1585 26.2247 8.43846 26.6555 8.8907 27.1078C9.34293 27.5601 9.77364 27.8402 10.3766 28.0744C10.8316 28.2521 11.5153 28.4621 12.7751 28.5214C14.1372 28.5833 14.5464 28.5968 17.9974 28.5968C21.4484 28.5968 21.8575 28.5833 23.2196 28.5214C24.4795 28.4648 25.1632 28.2548 25.6181 28.0771C26.2211 27.8429 26.6518 27.5628 27.104 27.1105C27.5563 26.6581 27.8362 26.23 28.0704 25.6269C28.2481 25.1719 28.4581 24.488 28.5146 23.2279C28.5765 21.8655 28.59 21.4562 28.59 18.0071C28.59 14.558 28.5765 14.1487 28.5146 12.7863C28.4581 11.5262 28.2454 10.8423 28.0704 10.3873V10.3846ZM17.9974 24.6441C14.3337 24.6441 11.3619 21.6743 11.3619 18.0071C11.3619 14.3399 14.3337 11.3701 17.9974 11.3701C21.661 11.3701 24.6329 14.3426 24.6329 18.0071C24.6329 21.6716 21.6637 24.6441 17.9974 24.6441ZM24.894 12.6598C24.038 12.6598 23.3435 11.9651 23.3435 11.1089C23.3435 10.2527 24.038 9.55799 24.894 9.55799C25.75 9.55799 26.4445 10.2527 26.4445 11.1089C26.4445 11.9651 25.75 12.6598 24.894 12.6598Z" fill="white"/>
+									<path d="M17.9973 22.3153C20.376 22.3153 22.3043 20.3865 22.3043 18.0072C22.3043 15.628 20.376 13.6992 17.9973 13.6992C15.6186 13.6992 13.6903 15.628 13.6903 18.0072C13.6903 20.3865 15.6186 22.3153 17.9973 22.3153Z" fill="white"/>
+									<path d="M35.4677 8.09067C35.3573 6.68518 35.1177 5.74011 34.6251 4.74118C34.2213 3.92266 33.7745 3.31415 33.1257 2.68949C31.9682 1.58286 30.5523 0.909737 28.8645 0.66741C28.0461 0.54894 27.8846 0.513937 23.7014 0.505859H18.0054C10.6996 0.505859 8.56222 0.513937 8.14767 0.54894C6.64828 0.672795 5.7142 0.909737 4.69935 1.41593C3.91601 1.80634 3.29688 2.25599 2.68851 2.88874C1.57676 4.04113 0.903784 5.45739 0.661514 7.1456C0.54307 7.96413 0.508076 8.13106 0.5 12.3098C0.5 13.7046 0.5 15.5382 0.5 17.9991C0.5 25.3012 0.508076 27.4364 0.54307 27.851C0.664205 29.3104 0.893016 30.2285 1.37756 31.2328C2.30357 33.1553 4.07214 34.5985 6.15567 35.137C6.8771 35.3228 7.6739 35.4251 8.69682 35.4735C9.13021 35.4924 13.5476 35.5059 17.9677 35.5059C22.3878 35.5059 26.8079 35.5005 27.2305 35.4789C28.4149 35.4224 29.1041 35.3308 29.8632 35.1343C31.9602 34.5931 33.6964 33.1714 34.6413 31.2221C35.1151 30.242 35.3573 29.2888 35.4677 27.9049C35.4919 27.6033 35.5 22.7945 35.5 17.9937C35.5 13.193 35.4892 8.39223 35.465 8.09067H35.4677ZM30.8403 23.3357C30.7757 24.7116 30.5577 25.6513 30.24 26.4725C29.9089 27.3233 29.4675 28.0422 28.7487 28.7611C28.03 29.48 27.3113 29.9216 26.4606 30.2528C25.6396 30.5732 24.6974 30.7913 23.3219 30.8532C21.9436 30.9151 21.5048 30.9313 17.9946 30.9313C14.4844 30.9313 14.0456 30.9151 12.6674 30.8532C11.2918 30.7913 10.3523 30.5732 9.5313 30.2528C8.68066 29.9216 7.96193 29.48 7.24319 28.7611C6.52446 28.0422 6.08299 27.3206 5.75188 26.4725C5.43155 25.6513 5.2162 24.7116 5.15159 23.3357C5.08968 21.9571 5.07353 21.5182 5.07353 18.0072C5.07353 14.4962 5.08968 14.0573 5.15159 12.6787C5.21351 11.3028 5.43155 10.3632 5.75188 9.54194C6.08299 8.6911 6.52446 7.9722 7.24319 7.2533C7.96193 6.5344 8.68336 6.09283 9.5313 5.76434C10.3523 5.44393 11.2918 5.22584 12.6674 5.16391C14.0456 5.10198 14.4871 5.08583 17.9919 5.08583H17.9973C21.5048 5.08583 21.9436 5.10198 23.3219 5.16391C24.6974 5.22584 25.6369 5.44393 26.4606 5.76434C27.3113 6.09283 28.03 6.5344 28.7487 7.2533C29.4675 7.9722 29.9089 8.6938 30.24 9.54194C30.5577 10.3632 30.7757 11.3028 30.8403 12.6787C30.9022 14.0573 30.9184 14.4989 30.9184 18.0072C30.9184 21.5156 30.9022 21.9571 30.8403 23.3357Z" fill="white"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		
+		
+		<div class='b10 c'>
+			<div class='b10-map'>
+				<div style="position:relative;overflow:hidden;">
+					<iframe class='b10-map-iframe' src="https://yandex.ru/map-widget/v1/?ll=27.579647%2C53.908626&theme=dark&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDExNxIc0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiIKDQ5y3EEVZpxXQg%2C%2C&z=13.97" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	
+	
+	<footer class='fr'>
+		<div class='fr1'>
+			<div class='fr1-c'>
+				<div class='fr1-c1 c1'>
+					<div class='fr1-t'>
+						<div class='fr1-td'>
+							<div class='fr1-logo-c'>
+								<img class='fr1-logo' src='img/logo.svg' alt='Result. estate'/>
+							</div>	
+							<a class='fr1-a' href='tel:+375291885598'>
+								+375 (29) 188-55-98
+							</a>
+							<div class='fr1-h'>
+								Напишите нам и мы вам поможем
+							</div>
+							<a class='fr1-bn fr1-bn_2 bn' href='#'>
+								Отдел дружбы
+								с клиентами
+							</a>
+						</div>
+						<div class='fr1-td'>
+							<ul class='fr1-menu'>
+								<li class='fr1-menu-li'>
+									<a class='fr1-menu-a' href='#'>
+										Главная
+									</a>
+								</li>
+								<li class='fr1-menu-li'>
+									<a class='fr1-menu-a' href='#'>
+										Контакты
+									</a>
+								</li>
+								<li class='fr1-menu-li'>
+									<a class='fr1-menu-a' href='#'>
+										Условия покупки
+									</a>
+								</li>
+								<li class='fr1-menu-li'>
+									<a class='fr1-menu-a' href='#'>
+										Условия обработки персональных данных
+									</a>
+								</li>
+								<li class='fr1-menu-li'>
+									<a class='fr1-menu-a' href='#'>
+										О застройщике
+									</a>
+								</li>
+								<li class='fr1-menu-li'>
+									<a class='fr1-menu-a' href='#'>
+										Настройка cookie
+									</a>
+								</li>
+								<li class='fr1-menu-li'>
+									<a class='fr1-menu-a' href='#'>
+										О комплексе
+									</a>
+								</li>
+							</ul>
+						</div>	
+					</div>
+				</div>
+			</div>
+			
+			<div class='fr1-c'>
+				<div class='c1'>
+					<div class='fr1-w'>
+						Представленные на сайте иллюстрации и планировочные решения носят информационный характер и отображают ключевые принципы и концепцию объекта. Застройщик оставляет за собой право изменять отдельные элементы концепции, сохраняя заявленную функциональную составляющую. Предложение на сайте не является публичной офертой. Актуальную информацию о наличии и стоимости квартир уточняйте по телефону или в офисе продаж. УНП 691797838.
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+
+
+	<div class='box boxF' data-box='crl-m-f'>
+		<div class='box-td'>
+			<div class='box-b'>
+				<div class='box-b1'>
+					<div class='box-bn-c'>
+						<svg class="box-bn" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.44691 5.64358L12.568 0.522461L14.0309 1.98534L8.90979 7.10646L14.0309 12.2276L12.568 13.6905L7.44691 8.56934L2.3258 13.6905L0.862915 12.2276L5.98403 7.10646L0.862915 1.98534L2.3258 0.522461L7.44691 5.64358Z" fill="#CDD0D5"/>
+						</svg>
+					</div>
+					<div class='box-f-c'>
+						<img class='box-f' src='img/b6-1.jpg' alt=''/>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class='box boxF' data-box='b7-f1-1'>
+		<div class='box-td'>
+			<div class='box-b'>
+				<div class='box-b1'>
+					<div class='box-bn-c'>
+						<svg class="box-bn" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.44691 5.64358L12.568 0.522461L14.0309 1.98534L8.90979 7.10646L14.0309 12.2276L12.568 13.6905L7.44691 8.56934L2.3258 13.6905L0.862915 12.2276L5.98403 7.10646L0.862915 1.98534L2.3258 0.522461L7.44691 5.64358Z" fill="#CDD0D5"/>
+						</svg>
+					</div>
+					<div class='box-f-c'>
+						<img class='box-f' src='img/b7-tab-1.jpg' alt=''/>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class='box boxF' data-box='b7-f1-2'>
+		<div class='box-td'>
+			<div class='box-b'>
+				<div class='box-b1'>
+					<div class='box-bn-c'>
+						<svg class="box-bn" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.44691 5.64358L12.568 0.522461L14.0309 1.98534L8.90979 7.10646L14.0309 12.2276L12.568 13.6905L7.44691 8.56934L2.3258 13.6905L0.862915 12.2276L5.98403 7.10646L0.862915 1.98534L2.3258 0.522461L7.44691 5.64358Z" fill="#CDD0D5"/>
+						</svg>
+					</div>
+					<div class='box-f-c'>
+						<img class='box-f' src='img/b7-tab-2.jpg' alt=''/>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class='box boxF' data-box='b7-f1-3'>
+		<div class='box-td'>
+			<div class='box-b'>
+				<div class='box-b1'>
+					<div class='box-bn-c'>
+						<svg class="box-bn" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.44691 5.64358L12.568 0.522461L14.0309 1.98534L8.90979 7.10646L14.0309 12.2276L12.568 13.6905L7.44691 8.56934L2.3258 13.6905L0.862915 12.2276L5.98403 7.10646L0.862915 1.98534L2.3258 0.522461L7.44691 5.64358Z" fill="#CDD0D5"/>
+						</svg>
+					</div>
+					<div class='box-f-c'>
+						<img class='box-f' src='img/b7-tab-3.jpg' alt=''/>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class='box boxF' data-box='b7-f1-4'>
+		<div class='box-td'>
+			<div class='box-b'>
+				<div class='box-b1'>
+					<div class='box-bn-c'>
+						<svg class="box-bn" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.44691 5.64358L12.568 0.522461L14.0309 1.98534L8.90979 7.10646L14.0309 12.2276L12.568 13.6905L7.44691 8.56934L2.3258 13.6905L0.862915 12.2276L5.98403 7.10646L0.862915 1.98534L2.3258 0.522461L7.44691 5.64358Z" fill="#CDD0D5"/>
+						</svg>
+					</div>
+					<div class='box-f-c'>
+						<img class='box-f' src='img/b7-tab-4.jpg' alt=''/>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class='box boxF' data-box='b7-f1-5'>
+		<div class='box-td'>
+			<div class='box-b'>
+				<div class='box-b1'>
+					<div class='box-bn-c'>
+						<svg class="box-bn" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.44691 5.64358L12.568 0.522461L14.0309 1.98534L8.90979 7.10646L14.0309 12.2276L12.568 13.6905L7.44691 8.56934L2.3258 13.6905L0.862915 12.2276L5.98403 7.10646L0.862915 1.98534L2.3258 0.522461L7.44691 5.64358Z" fill="#CDD0D5"/>
+						</svg>
+					</div>
+					<div class='box-f-c'>
+						<img class='box-f' src='img/b7-tab-5.jpg' alt=''/>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+
+
+	<div class='box boxF' data-box='b5-map'>
+		<div class='box-td'>
+			<div class='box-b'>
+				<div class='box-b1'>
+					<div class='box-bn-c'>
+						<svg class="box-bn" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.44691 5.64358L12.568 0.522461L14.0309 1.98534L8.90979 7.10646L14.0309 12.2276L12.568 13.6905L7.44691 8.56934L2.3258 13.6905L0.862915 12.2276L5.98403 7.10646L0.862915 1.98534L2.3258 0.522461L7.44691 5.64358Z" fill="#CDD0D5"/>
+						</svg>
+					</div>
+					<div class='box-f-c'>
+						<img class='box-f' src='img/b5-map.jpg' alt=''/>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+
+
+	<div class='box' data-box='box1'>
+		<div class='box-td'>
+			<div class='box-b'>
+				<div class='box-b1'>
+					<div class='box-bn-c'>
+						<svg class="box-bn" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.44691 5.64358L12.568 0.522461L14.0309 1.98534L8.90979 7.10646L14.0309 12.2276L12.568 13.6905L7.44691 8.56934L2.3258 13.6905L0.862915 12.2276L5.98403 7.10646L0.862915 1.98534L2.3258 0.522461L7.44691 5.64358Z" fill="#CDD0D5"/>
+						</svg>
+					</div>
+					
+					<div class='box1-h'>
+						<div class='box1-h-1'>
+							Перезвонить мне
+						</div>
+						<div class='box1-h-2'>
+							В ближайшее время с вами свяжется менеджер
+						</div>
+					</div>
+					
+					<div class='box1-c' data-tabs>
+						<div class='box1-t' data-tabs-btns='tabs2-btns'>
+							<div class='box1-td act' data-tabs-btn='tabs2-bn1'>
+								Заказать звонок
+							</div>
+							<div class='box1-td' data-tabs-btn='tabs2-bn2'>
+								Whatsapp
+							</div>
+							<div class='box1-td' data-tabs-btn='tabs2-bn3'>
+								Telegram
+							</div>
+							<div class='box1-td' data-tabs-btn='tabs2-bn4'>
+								Viber
+							</div>
+						</div>
+						<div class='box1-h1'>
+							Ваше Имя*
+						</div>
+						<input class='box1-inp' type='text' placeholder='Ваше имя'/>
+						<div class='box1-h1'>
+							Номер телефона*
+						</div>
+						
+						<div class="slt box1-slt">
+							<div class="slt-t">
+								<div class="slt-td">
+									<select class="slt-s">
+										<option class="slt-s-e" selected="">
+											1
+										</option>
+										<option class="slt-s-e">
+											2
+										</option>
+									</select>
+									<div class="slt-n-c">
+										<div class="slt-n">
+											<div class="slt-n-e act">
+												<img class="slt-f" src="img/flag-1.jpg" alt="">
+												<span class="slt-n-e-1">
+													+375
+												</span>	
+											</div>
+											<div class="slt-n-e">
+												<img class="slt-f" src="img/flag-1.jpg" alt="">
+												<span class="slt-n-e-1">
+													+375
+												</span>
+											</div>
+										</div>
+									</div>	
+								</div>
+								<div class="slt-td">
+									<span class="slt-part">
+										+375
+									</span>
+								</div>
+								<div class="slt-td">
+									<input class="slt-inp tel" type="text" placeholder="(_) ___-__-__">
+								</div>
+							</div>
+						</div>
+						
+						<div class='box1-w'>
+							* — поле, обязательное для заполнения
+						</div>
+					</div>
+					
+					<div class='box1-bn-c'>
+						<button class='box1-bn bn bnA' type='submit'>
+							<span class='box1-bn-1 bnA-1'>
+								Отправить
+							</span>	
+						</button>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

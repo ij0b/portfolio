@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+  <!-- https://codyhouse.co/demo/animated-svg-image-carousel/index.html --- svg смена кадров -->
+<head>
+  <meta charset="UTF-8">
+  <title>C-A-R-O-U-S-E-L</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/3x3.jpg">
+  <link rel="stylesheet" href="css/css.css" />
+  <link rel="stylesheet" href="css/tabs.css" />
+  <link rel="stylesheet" href="css/scrollbar.css" />
+  <link rel="stylesheet" href="css/carousel.css" />
+  <script type="text/javascript" src="js/js.js"></script>
+  <script type="text/javascript" src="js/tabs.js"></script>
+  <script type="text/javascript" src="js/scrollbar.js"></script>  
+  <script type="text/javascript" src="js/carousel.js"></script>
+</head>
+
+<body>
+  <div class="menu-nav menu-nav__act">
+		<div class="menu-nav__hide"></div>
+		<div class="menu-nav__close">&#x2715;</div>
+		<div class="menu-nav__h">
+			<span class="menu-nav__h-1">Н</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">в</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">г</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">ц</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">я</span>
+			<span class="menu-nav__h-1">:</span>
+		</div>
+		<ul class="menu-nav__ul">
+			<li class="menu-nav__li">
+				<a href="js-slider.html" class="menu-nav__a">Слайдер</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-tabs.html" class="menu-nav__a">Табы</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-scrollbar.html" class="menu-nav__a">Скроллбар</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-carousel.html" class="menu-nav__a menu-nav__a-act">Карусель</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-modal-window.html" class="menu-nav__a">Модальное окно</a>
+			</li>
+		</ul>
+		<a href="portfolio.html#anchor-portfolio" class="menu-nav__a menu-nav__a_1">Обратно на страницу портфолио</a>
+	</div>
+
+	<style>
+			.menu-nav{
+					display: none;
+					position:fixed;
+					top:0;
+					bottom:0;
+					left:0;
+					z-index:9999;
+					margin:auto 20px auto 0;
+					background-color: #282a36;
+					border: 5px solid #0a0;
+					box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+			}
+			.menu-nav__act{
+					display: table;
+			}
+			.menu-nav__hide{
+					color: #fff;
+					position: absolute;
+					bottom: 0;
+					top:0;
+					right: -22px;
+					margin:auto 0;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 38px;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					padding:0 0 0 15px;
+					background: radial-gradient(circle, #000000 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__hide-act .menu-nav__hide{
+					padding:0 0 0 4px;
+			}
+			.menu-nav__hide:before{
+					content:'\2B05';
+			}
+			.menu-nav__hide-act .menu-nav__hide:before{
+					content:'\27A1';
+			}
+			.menu-nav__hide:hover{
+					box-shadow: 0 0 10px #fff;
+					padding:0 0 0 9px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__hide:hover{
+					padding:0 0 0 9px;
+			}
+			.menu-nav__hide-act{
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__ul,
+			.menu-nav__hide-act .menu-nav__a{
+					display: none;
+			}
+			.menu-nav__close{
+					position: absolute;
+					top: -20px;
+					right: -22px;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 54px;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__close:hover{
+					box-shadow: 0 0 10px #fff;
+					line-height: 29px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__h{
+					color:#fff;
+					font-size:20px;
+					text-align: center;
+					margin:10px 0 10px;
+          font-family: "Time New Romans", sans-serif;
+			}
+			.menu-nav__hide-act .menu-nav__h{
+					margin:10px 0 ;
+			}
+			.menu-nav__hide-act .menu-nav__h-1{
+					display: block;
+					padding:0 25px 0 5px;
+					line-height:80%;
+			}
+			.menu-nav__hide-act .menu-nav__h-1:last-child{
+					display: none;
+			}
+			.menu-nav__ul{
+					padding: 0 25px 5px 15px;
+					margin:0 0 0 15px;
+			}
+			.menu-nav__li{
+          font-family: "Time New Romans", sans-serif;
+          font-size: 14px;
+					margin:5px 0 15px;
+					list-style: decimal;
+					color: #fff;
+			}
+			.menu-nav__a{
+					color: #fff;
+					font-family: "Time New Romans", sans-serif;
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 14px;
+					background: #0a0;
+					border-radius: 14px;
+					box-shadow: 0 5px #070;
+					margin:0 0 0 10px;
+					text-decoration: underline;
+			}
+			.menu-nav__a:focus{
+					color: #fff;
+			}
+			.menu-nav .menu-nav__a:hover{
+					color:#fff !important;
+					box-shadow: 0 5px #070, 0px 5px 6px #fff;
+			}
+			.menu-nav__a-act{
+					background: #75f;
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+					cursor:default;
+			}
+			.menu-nav .menu-nav__a-act:hover{
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+			}
+			.menu-nav__a_1{
+				display: block;
+				margin:0 25px 20px 25px;
+				text-align: center;
+			}
+	</style>
+
+	<script>
+		function menuNav(){
+			let container = document.querySelector('.menu-nav');
+			let close = container.querySelector('.menu-nav__close');
+			let hide = container.querySelector('.menu-nav__hide');
+		
+			close.addEventListener('click', () => {
+				[container, ...container.querySelectorAll('.menu-nav__act')].forEach( (elmAct) => {
+					elmAct.classList.remove('menu-nav__act');
+				})
+			})
+
+			hide.addEventListener('click', () => {
+				container.classList.toggle('menu-nav__hide-act');
+			})
+		}
+		menuNav();
+	</script>
+
+
+
+  <div class="container">
+    <h1 class="fs-h1">
+      C-A-R-O-U-S-E-L
+    </h1>
+    <div class="fs-w">
+      <span class="fs-w-1">
+        Карусель — это динамический элемент пользовательского
+        интерфейса, который автоматически переключает серию изображений
+        или слайдов контента.
+        <br>
+        Нажатие на стрелки справа\слева сдвигают следующую\предыдущую группу слайдов.
+        Нажатие на навигацию внизу переключает на соответствующую группу слайдов.
+        На устройствах с поддержкой прикосновения на контенте
+        и пролистывания по горизонтали сдвигают группу слайдов.
+      </span> 
+    </div>
+  </div> 
+
+  <!-- (.carousel__item>.carousel__content>.carousel__h{Заголовок $}+.carousel__txt{Дополнительный текст}+img.carousel__img[src="img/$.gif"])*9 -->
+  <div class="container10">
+    <div class="carousel" data-carousel="carousel-1" data-carousel-elm="carousel__content">      
+      <div class="carousel__content ">
+        <div class="carousel__h">Заголовок 1</div>
+        <img src="img/155.gif" alt="" class="carousel__img">
+      </div>
+      <div class="carousel__content ">
+        <div class="carousel__inner">
+          <h4 class="carousel__h1">
+            Слайд &minus;> 2
+          </h4>
+          <b class="fs-b">Длинный текст</b>
+          текст текст текст текст
+          текст текст текст текст текст
+          текст текст текст текст текст текст.
+        </div>
+      </div> 
+      <div class="carousel__content">
+        <div class="carousel__h">Заголовок 3</div>
+        <img src="img/125.gif" alt="" class="carousel__img">
+      </div>
+      <div class="carousel__content">
+        <div class="carousel__h">Заголовок 4</div>
+        <img src="img/gif245.gif" alt="" class="carousel__img">
+      </div> 
+      <div class="carousel__content ">
+        <div class="carousel__h">Заголовок 5</div>
+        <img src="img/148.gif" alt="" class="carousel__img">
+      </div>
+       <div class="carousel__content carousel__act">
+        <div class="carousel__h">Заголовок 6</div>
+        <img src="img/149.gif" alt="" class="carousel__img">
+      </div>
+      <div class="carousel__content">
+        <div class="carousel__h">Заголовок 7</div>
+        <img src="img/gif222.gif" alt="" class="carousel__img">
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container">
+    <h2 class="fs-h2">
+      Подробнее
+    </h2>
+    <div class="fs-w1">
+      <h4 class="fs-h4">
+        Адаптивность
+      </h4>
+      <p class="fs-p">
+        Загрузка страницы, при разной ширине экрана просмотра, 
+        скрипт учитывает и перестраивает количество 
+        отображаемых (видных на экране) элементов-карусели.     
+      </p>
+      <h4 class="fs-h4">
+        Гибкость
+      </h4>
+      <ol class="fs-ol fs-ol_1">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            Предусматривает возможность не создавать или перестраивать 
+            структуру html-разметки для скрипта карусели, 
+            а встраивать в уже существующую разметку (тег-контенер 
+            содержит теги которые планируется сделать элементами 
+            карусели, просто добавляется несколько атрибутов в тег-контейнер)
+          </div>
+        </li>      
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            Элементы группы контента могут быть не только картинки,
+            но и почти любой тег с настраиваемым селектором класса
+          </div>
+        </li>
+      </ol>
+      <h4 class="fs-h4">
+        Реализация
+      </h4>
+      <p class="fs-p">
+        Рендеринг (отрисовка) каркаса карусели происходит через js.<br>
+        Настройка состоит из добавления тегам нескольких 
+        пользовательских атрибутов + при инициализации добавления объекта
+        с назначением количества отображаемых элементов для разной ширины
+        экрана просмотра 
+        <b class="fs-b">carousel({'769':3,'479':2,'0':1})</b> 
+        , где ключ соответствует медиа запросу 
+        <b class="fs-b">min-width: 769px</b>, а значение &mdash; 
+        количество отображаемых элементов-карусели. <br>             
+        Настройка (пользовательские атрибуты):
+      </p>
+      <ol class="fs-ol">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-carousel="carousel-1"</b> &mdash;
+            добавляется тегу-контейнеру внутри которого элементы-карусели,
+            значение атрибута равно классу, который на этапе рендеренга 
+            назначится тегу-контейнеру содержащему карусель, это 
+            способствует гибкой настройке определенного этим 
+            уникальным классом экземпляру карусели.
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-carousel-elm="carousel__content"</b> &mdash; 
+            добавляется тегу-контейнеру, значение это класс 
+            элементов-карусели
+          </div>
+        </li>
+      </ol>
+      <p class="fs-p">
+        Добавление класса <b class="fs-b">carousel__act</b> элементу-карусели
+        делает показ карусели с него.        
+      </p>
+    </div>
+  </div>
+
+
+
+  <div class="container10 container10_0">
+    <h2 class="fs-h2">
+      КОД
+    </h2>
+
+    <div class="code">
+      <div class='tabs__tablist'>
+        <div class='tabs__tab code__tab tabs__act' data-tabs="code-1 btn-1">
+          HTML
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-2">
+          CSS
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-3">
+          JS
+        </div>
+      </div>
+      <div class="code__box">
+        <div class="code__panel tabs__act" data-tabs="code-1 panel-1">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+<div class="carousel" data-carousel="carousel-1" data-carousel-elm="carousel__content">      
+  <div class="carousel__content ">
+    <div class="carousel__h">Заголовок 1</div>
+    <img src="img/155.gif" alt="" class="carousel__img">
+  </div>
+  <div class="carousel__content ">
+    <div class="carousel__inner">
+      <h4 class="carousel__h1">
+        Слайд &minus;> 2
+      </h4>
+      <b class="fs-b">Длинный текст</b>
+      текст текст текст текст
+      текст текст текст текст текст
+      текст текст текст текст текст текст.
+    </div>
+  </div> 
+  <div class="carousel__content">
+    <div class="carousel__h">Заголовок 3</div>
+    <img src="img/125.gif" alt="" class="carousel__img">
+  </div>
+  <div class="carousel__content">
+    <div class="carousel__h">Заголовок 4</div>
+    <img src="img/gif245.gif" alt="" class="carousel__img">
+  </div> 
+  <div class="carousel__content ">
+    <div class="carousel__h">Заголовок 5</div>
+    <img src="img/148.gif" alt="" class="carousel__img">
+  </div>
+    <div class="carousel__content carousel__act">
+    <div class="carousel__h">Заголовок 6</div>
+    <img src="img/149.gif" alt="" class="carousel__img">
+  </div>
+  <div class="carousel__content">
+    <div class="carousel__h">Заголовок 7</div>
+    <img src="img/gif222.gif" alt="" class="carousel__img">
+  </div>
+</div>
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-2">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+/* +++C A R O U S E L */
+
+.carousel {
+  position: relative;
+  z-index: 5;
+}
+.carousel__wrapper {
+  height: 500px;
+  overflow: hidden;
+}
+.carousel__items {
+  height: 100%;
+  display: table;
+  display: flex;
+  align-items: center;
+  transition: transform ease 1s;
+}
+.carousel__item {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+  margin: 0 20px;
+}
+.carousel__arw {
+  position: absolute;
+  top: 0;
+  bottom:0;
+  z-index: 16;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: '66';
+  font-size: 25px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all ease-out 0.75s;
+  background: #000;
+  background: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(255,255,255,1) 100%);
+  user-select: none;
+}
+.carousel__arw:hover {
+  box-shadow: 0 0 10px #fff;
+  transition: all ease-out 0.75s;
+}
+.carousel__arw_l {
+  left: 0;
+}
+.carousel__arw_r {
+  right: 0;
+}
+.carousel__dots {
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.carousel__dot {
+  margin: 10px 5px 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all ease-out 0.75s;
+  background: #000;
+  background: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(255,255,255,1) 100%);
+  user-select: none;
+}
+.carousel__dot:hover {
+  box-shadow: 0 0 10px #fff;
+  transition: all ease-out 0.75s;
+}
+.carousel__dot.carousel__act {
+  background: #fff;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 10%, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+}
+.carousel__dot.carousel__act:hover {
+  transition: none;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* ---C A R O U S E L */
+
+.carousel__content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: #282a36;
+}
+.carousel__h {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 15px;
+  z-index: 6;
+  font-size: 1.5em;
+  font-family: "75";
+  text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+.carousel__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: z-index ease-in 1s, transform ease-in 1s, box-shadow ease-in 1s;
+  position: relative;
+  z-index: 5;
+}
+.carousel__inner {
+  background: #fff;
+  padding: 5px 15px 15px;
+  color: #000;
+  font-size: 0.75em;
+}
+.carousel__h1 {
+  font-size: 1.5em;
+  font-family: "75";
+  color: #000;
+}
+
+@media (max-width: 767px){
+  .carousel__wrapper {
+    height: 300px;
+  }
+  .carousel__item {
+    margin: 0 10px;
+  }
+  .carousel__content {
+    height: 100%;
+  }
+  .carousel__arw {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+  }        
+  .carousel__arw_l {
+    left: 0;
+  }
+  .carousel__arw_r {
+    right: 0;
+  }
+  .carousel__dot {
+    width: 12px;
+    height: 12px;
+  }
+  .carousel__h {
+    padding:5px 5px;
+  }
+}
+
+@media (max-width: 479px){
+  .carousel__inner {
+    padding: 5px 10px 15px;
+  }
+  .carousel__h {
+    font-size: 1.25em;  
+  }
+}
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-3">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+// +++C A R O U S E L
+
+function carousel(itemsObjN) {
+  let carouselElms = document.querySelectorAll('[data-carousel]');
+  let carouselClass;
+  let carouselElmClass;
+  let partItems;
+  let partDots;
+  let carouselElmAct;
+  let carouselElmCur;
+  let carouselElmsAct;
+  let itemsActGN;
+  let itemsGN;
+  let itemsN;	
+
+  function render(elmCarousel){	
+    for(let i = 0; i < carouselElms.length; i++){
+      if(carouselElms[i].classList.contains('carousel__act')){
+        itemsActGN = Math.ceil((i + 1) / itemsN);
+        for(let j = 0; j < itemsN; j++){
+          carouselElmsAct.push(itemsActGN * itemsN - itemsN + j);
+        }
+      }
+    }			
+
+    if(carouselElmsAct.length == 0){
+      for(let j = 0; j < itemsN; j++){
+        carouselElmsAct.push(j);
+      }
+    }
+
+    let cloneL = '';
+    let cloneR = '';
+
+    for(let i = 0; i < carouselElms.length; i++){
+      carouselElmAct = '';
+      carouselElmCur = '';
+      if(carouselElmsAct.includes(i)){
+        carouselElmCur = carouselElmsAct[0] == i ? 'carousel__cur' : '';
+        carouselElmAct = 'carousel__act';
+      }		
+      partItems += '<div class="carousel__item '+ carouselElmAct +' '+ carouselElmCur +'">\n\
+                    ' + carouselElms[i].outerHTML + '\n\
+                    </div>';
+      cloneL += '<div class="carousel__item carousel__item_clone">\n\
+                ' + carouselElms[i].outerHTML + '\n\
+                </div>';
+      cloneR = cloneL;
+    }
+
+    for(let i = 0; i < itemsGN; i++){
+      carouselElmAct = itemsActGN == i + 1 ? 'carousel__act' : '';
+      partDots += ' <div class="carousel__dot '+ carouselElmAct +'"></div>\n';
+    }
+
+    let html = '<div class="'+ carouselClass +' carousel carousel__new" data-carousel="">\n\
+                  <div class="carousel__wrapper">\n\
+                    <div class="carousel__items">\n\
+                      '+ cloneL + partItems + cloneR + '\n\
+                    </div>\n\
+                  </div>\n\
+                  <div class="carousel__arws">\n\
+                    <div class="carousel__arw carousel__arw_l">&lt;</div>\n\
+                    <div class="carousel__arw carousel__arw_r">&gt;</div>\n\
+                  </div>\n\
+                  <div class="carousel__dots">\n\
+                    ' + partDots + '\n\
+                  </div>\n\
+                </div>';
+                
+    elmCarousel.outerHTML = html;	
+  }
+  
+  Object.entries(itemsObjN).forEach(([key,value]) => {
+    let media1 = window.matchMedia('(min-width: '+ key +'px)');
+
+    if(media1.matches){
+      itemsN = value;
+    }
+  })
+
+  carouselElms.forEach((elmCarousel) => {
+    carouselClass = elmCarousel.getAttribute('data-carousel');
+    carouselElmClass = elmCarousel.getAttribute('data-carousel-elm');
+    carouselElms = elmCarousel.querySelectorAll('.'+carouselElmClass);
+    partItems = '';
+    partDots = '';
+    carouselElmAct;
+    carouselElmCur;
+    carouselElmsAct = [];
+    itemsGN = Math.ceil(carouselElms.length / itemsN);
+  
+    render(elmCarousel);		
+    elmCarousel = document.querySelector('.carousel__new');
+    elmCarousel.classList.remove('carousel__new');
+
+    let wrapper = elmCarousel.querySelector('.carousel__wrapper');
+    let wrapperW = wrapper.clientWidth;
+    let itemsC = elmCarousel.querySelector('.carousel__items');
+    let items = elmCarousel.querySelectorAll('.carousel__item');
+    let itemsBase = elmCarousel.querySelectorAll('.carousel__item:not(.carousel__item_clone)');
+    let arwL = elmCarousel.querySelector('.carousel__arw_l');	
+    let arwR = elmCarousel.querySelector('.carousel__arw_r');	
+    let dotsC = elmCarousel.querySelector('.carousel__dots');
+    let dots = elmCarousel.querySelectorAll('.carousel__dot');	
+    let optAutoplay = false;
+    let optInterval = 5000;
+    let intervalId;
+    let startX,endX;
+
+    let itemW = wrapperW / itemsN;
+    let itemsW = items.length * parseFloat(itemW);
+    let itemsBaseW = itemsBase.length * parseFloat(itemW);
+
+    items.forEach((elmItem) => {
+      elmItem.style.width = itemW + 'px';
+    })
+    itemsC.style.width = itemsW + 'px';
+    let itemActId = Array.prototype.indexOf.call(itemsBase,itemsC.querySelector('.carousel__cur'));
+    itemsActGN = Math.ceil((itemActId + 1) / itemsN);
+    itemsC.style.transform = 'translate(-'+ (itemsBaseW + (itemsActGN - 1) * itemsN * itemW)+'px,0px)';
+
+    function autoplay(){
+      if(optAutoplay){
+        clearInterval(intervalId);
+        intervalId = setInterval(() => {
+          arwR.click();
+        },optInterval)
+      }
+    }
+    autoplay();
+    
+    function removeAct(){
+      dotsC.querySelector('.carousel__act').classList.remove('carousel__act');
+      items.forEach((elmItems) => {
+        elmItems.classList.remove('carousel__act');
+        elmItems.classList.remove('carousel__cur');
+      })
+    }
+  
+    function addAct(){
+      dots[itemsActGN].classList.add('carousel__act');
+      itemsBase[itemsActGN * itemsN].classList.add('carousel__cur');
+      
+      for(let i = 0; i < itemsN; i++){
+        if(itemsBase[itemsActGN * itemsN + i]){
+          itemsBase[itemsActGN * itemsN + i].classList.add('carousel__act');
+        }				
+      }
+
+      itemsC.style.transform = 'translate(-'+ parseFloat(itemsBaseW + itemsActGN * itemsN * itemW) +'px,0)';
+    }
+
+    function arwRClick(){
+      autoplay();
+      removeAct();
+      if(itemsActGN == itemsGN){
+        itemsActGN = 0;
+      }
+      addAct();
+      itemsActGN++;
+    }
+
+    function arwLClick(){
+      autoplay();
+      removeAct();
+      if(itemsActGN == 1){
+        itemsActGN = itemsGN;
+      }else{
+        itemsActGN--;
+      }			
+      itemsActGN--;
+      addAct();
+      itemsActGN++;	
+    }
+
+    itemsC.addEventListener('touchstart', function itemsCTouchstart(evItemsC) {
+      startX = evItemsC.targetTouches[0].clientX;
+    })
+
+    itemsC.addEventListener('touchend', function itemsCTouchend(evItemsC) {
+      endX = evItemsC.changedTouches[0].clientX
+      if(startX < endX){
+        arwR.click();
+      }else{
+        arwL.click();
+      }
+    })
+
+    arwL.addEventListener('click', arwLClick);	
+    arwR.addEventListener('click', arwRClick);
+    
+    dots.forEach((elmDot) => {
+      elmDot.addEventListener('click', function elmDotClick(evDot) {
+        autoplay();					
+        removeAct(items,dotsC);
+        itemsActGN = Array.prototype.indexOf.call(dots,evDot.target);
+        addAct();
+        itemsActGN++
+      })
+    })
+  })
+}
+
+// ---C A R O U S E L
+
+document.addEventListener('DOMContentLoaded', () => {
+  carousel({'769':3,'479':2,'0':1});
+})
+            </code>
+          </div>  
+        </div>  
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

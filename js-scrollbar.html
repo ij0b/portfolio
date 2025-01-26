@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>S-C-R-O-L-L-B-A-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/3x3.jpg">
+  <link rel="stylesheet" href="css/css.css" />
+  <link rel="stylesheet" href="css/tabs.css" />
+  <link rel="stylesheet" href="css/scrollbar.css" />
+  <script type="text/javascript" src="js/js.js"></script>
+  <script type="text/javascript" src="js/tabs.js"></script>
+  <script type="text/javascript" src="js/scrollbar.js"></script>
+</head>
+
+<body>
+  <div class="menu-nav menu-nav__act">
+		<div class="menu-nav__hide"></div>
+		<div class="menu-nav__close">&#x2715;</div>
+		<div class="menu-nav__h">
+			<span class="menu-nav__h-1">Н</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">в</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">г</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">ц</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">я</span>
+			<span class="menu-nav__h-1">:</span>
+		</div>
+		<ul class="menu-nav__ul">
+			<li class="menu-nav__li">
+				<a href="js-slider.html" class="menu-nav__a">Слайдер</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-tabs.html" class="menu-nav__a">Табы</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-scrollbar.html" class="menu-nav__a menu-nav__a-act">Скроллбар</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-carousel.html" class="menu-nav__a">Карусель</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-modal-window.html" class="menu-nav__a">Модальное окно</a>
+			</li>
+		</ul>
+		<a href="portfolio.html#anchor-portfolio" class="menu-nav__a menu-nav__a_1">Обратно на страницу портфолио</a>
+	</div>
+
+	<style>
+			.menu-nav{
+					display: none;
+					position:fixed;
+					top:0;
+					bottom:0;
+					left:0;
+					z-index:9999;
+					margin:auto 20px auto 0;
+					background-color: #282a36;
+					border: 5px solid #0a0;
+					box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+			}
+			.menu-nav__act{
+					display: table;
+			}
+			.menu-nav__hide{
+					color: #fff;
+					position: absolute;
+					bottom: 0;
+					top:0;
+					right: -22px;
+					margin:auto 0;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 38px;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					padding:0 0 0 15px;
+					background: radial-gradient(circle, #000000 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__hide-act .menu-nav__hide{
+					padding:0 0 0 4px;
+			}
+			.menu-nav__hide:before{
+					content:'\2B05';
+			}
+			.menu-nav__hide-act .menu-nav__hide:before{
+					content:'\27A1';
+			}
+			.menu-nav__hide:hover{
+					box-shadow: 0 0 10px #fff;
+					padding:0 0 0 9px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__hide:hover{
+					padding:0 0 0 9px;
+			}
+			.menu-nav__hide-act{
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__ul,
+			.menu-nav__hide-act .menu-nav__a{
+					display: none;
+			}
+			.menu-nav__close{
+					position: absolute;
+					top: -20px;
+					right: -22px;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 54px;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__close:hover{
+					box-shadow: 0 0 10px #fff;
+					line-height: 29px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__h{
+					color:#fff;
+					font-size:20px;
+					text-align: center;
+					margin:10px 0 10px;
+          font-family: "Time New Romans", sans-serif;
+			}
+			.menu-nav__hide-act .menu-nav__h{
+					margin:10px 0 ;
+			}
+			.menu-nav__hide-act .menu-nav__h-1{
+					display: block;
+					padding:0 25px 0 5px;
+					line-height:80%;
+			}
+			.menu-nav__hide-act .menu-nav__h-1:last-child{
+					display: none;
+			}
+			.menu-nav__ul{
+					padding: 0 25px 5px 15px;
+					margin:0 0 0 15px;
+			}
+			.menu-nav__li{
+          font-family: "Time New Romans", sans-serif;
+          font-size: 14px;
+					margin:5px 0 15px;
+					list-style: decimal;
+					color: #fff;
+			}
+			.menu-nav__a{
+					color: #fff;
+					font-family: "Time New Romans", sans-serif;
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 14px;
+					background: #0a0;
+					border-radius: 14px;
+					box-shadow: 0 5px #070;
+					margin:0 0 0 10px;
+					text-decoration: underline;
+			}
+			.menu-nav__a:focus{
+					color: #fff;
+			}
+			.menu-nav .menu-nav__a:hover{
+					color:#fff !important;
+					box-shadow: 0 5px #070, 0px 5px 6px #fff;
+			}
+			.menu-nav__a-act{
+					background: #75f;
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+					cursor:default;
+			}
+			.menu-nav .menu-nav__a-act:hover{
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+			}
+			.menu-nav__a_1{
+				display: block;
+				margin:0 25px 20px 25px;
+				text-align: center;
+			}
+	</style>
+
+	<script>
+		function menuNav(){
+			let container = document.querySelector('.menu-nav');
+			let close = container.querySelector('.menu-nav__close');
+			let hide = container.querySelector('.menu-nav__hide');
+		
+			close.addEventListener('click', () => {
+				[container, ...container.querySelectorAll('.menu-nav__act')].forEach( (elmAct) => {
+					elmAct.classList.remove('menu-nav__act');
+				})
+			})
+
+			hide.addEventListener('click', () => {
+				container.classList.toggle('menu-nav__hide-act');
+			})
+		}
+		menuNav();
+	</script>
+
+
+  <div class="container">
+    <h1 class="fs-h1">
+      S-C-R-O-L-L-B-A-R
+    </h1>
+    <div class="fs-w">
+      <span class="fs-w-1">
+        Полоса прокрутки — элемент графического интерфейса пользователя,
+        использующийся для отображения информации и элементов интерфейса, 
+        больших по размеру, чем используемый для их отображения контейнер.
+        <br>
+        Зажатие ползунка справа/внизу с последующим движением
+        по вертикали/горизонтали приведет к прокрутке контента 
+        (содержимого) блока. Колесико мыши/shift+колесико мыши, 
+        а также клик по прокручиваему элементу для фокуса и
+        нажатие стрелок и пробела.
+      </span> 
+    </div>
+  </div> 
+<!-- <div style="height:800px;width:500px;border:20px solid #75f;box-shadow: inset 0 0 25px rgba(255, 255, 255, 10.5);background: rgba(119, 85, 255, 0.15);"></div> -->
+  <div class="container10">
+    <div class="fs-example">
+      <h2 class="fs-h2 fs-h2_1">
+        Пример №1 Вертикальная прокрутка
+      </h2>
+      <div data-scrollbar="scrollbar-1">
+        <b class="fs-b">Первая строка.</b>
+        <br>
+        Текст текст текст текст
+        текст текст текст текст текст
+        текст текст текст текст текст текст
+        текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст текст.
+        <br>
+        <b class="fs-b">Последняя строка.</b>                
+      </div>
+    </div>
+
+    <div class="fs-example">
+      <h2 class="fs-h2 fs-h2_1">
+        Пример №2 Горизонтальная прокрутка
+      </h2>
+      <div data-scrollbar="scrollbar-2">
+        <div style="height: 150px; width: 5000px; border: 20px solid #75f;
+        box-shadow: inset 0 0 25px #fff;
+        background: rgba(119, 85, 255, 0.15);"></div>
+      </div>
+    </div>
+
+    <div class="fs-example">
+      <h2 class="fs-h2 fs-h2_1">
+        Пример №3 Вертикальная и горизонтальная прокрутки
+      </h2>
+      <div data-scrollbar="scrollbar-3">
+        <img src="img/125.gif" alt="">
+      </div>      
+    </div>
+  </div>
+
+
+  
+  <div class="container">
+    <h2 class="fs-h2">
+      Подробнее
+    </h2>
+    <div class="fs-w1">
+      <h4 class="fs-h4">
+        Адаптивность
+      </h4>
+      <p class="fs-p">
+        Загрузка страницы + растягивание экрана просмотра,
+        скрипт учитывает и перерисовывает/пересчитывает наличие и
+        высоту/шириниу вертикльного/горизонтального ползунков.        
+      </p>
+      <h4 class="fs-h4">
+        Реализация
+      </h4>
+      <p class="fs-p">
+        Рендеринг (отрисовка) каркаса модального окна происходит через js.<br>
+        Настройка предельно простая, состоит из добавления тегy 
+        пользовательского атрибута <b class="fs-b">data-scrollbar="scrollbar-1"</b>,
+        значение равно классу, который на этапе рендеренга назначится
+        тегу-контейнеру содержащему scrollbar, это способствует гибкой настройке
+        определенного этим уникальным классом экземпляру scrollbar.
+        Внутри тега располагается контент.<br>
+        Ограничение по высоте производится через настройку свойства
+        <b class="fs-b">max-height: 200px;</b>
+        у тега с классом <b class="fs-b">.scrollbar__viewport</b>
+      </p>
+    </div>
+  </div>
+
+
+
+  <div class="container10 container10_0">
+    <h2 class="fs-h2">
+      КОД
+    </h2>
+
+    <div class="code">
+      <div class='tabs__tablist'>
+        <div class='tabs__tab code__tab tabs__act' data-tabs="code-1 btn-1">
+          HTML
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-2">
+          CSS
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-3">
+          JS
+        </div>
+      </div>
+      <div class="code__box">
+        <div class="code__panel tabs__act" data-tabs="code-1 panel-1">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+<div class="fs-example">
+  <h2 class="fs-h2 fs-h2_1">
+    Пример №1 Вертикальная прокрутка
+  </h2>
+  <div data-scrollbar="scrollbar-1">
+    <b class="fs-b">Первая строка.</b>
+    <br>
+    Текст текст текст текст
+    текст текст текст текст текст
+    текст текст текст текст текст текст
+    текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст текст.
+    <br>
+    <b class="fs-b">Последняя строка.</b>                
+  </div>
+</div>
+
+<div class="fs-example">
+  <h2 class="fs-h2 fs-h2_1">
+    Пример №2 Горизонтальная прокрутка
+  </h2>
+  <div data-scrollbar="scrollbar-2">
+    <div data-scrollbar="scrollbar-2">
+      <div style="height: 150px; width: 5000px; border: 20px solid #75f;
+        box-shadow: inset 0 0 25px #fff;
+        background: rgba(119, 85, 255, 0.15);"></div>
+    </div>
+  </div>
+</div>
+
+<div class="fs-example">
+  <h2 class="fs-h2 fs-h2_1">
+    Пример №3 Вертикальная и горизонтальная прокрутки
+  </h2>
+  <div data-scrollbar="scrollbar-3">
+    <img src="img/125.gif" alt="">
+  </div>      
+</div>
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-2">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+/* +++S C R O L L B A R */
+
+[data-scrollbar] {
+  overflow: hidden;
+}
+.scrollbar__container {
+  position: relative;
+  z-index: 5;
+  padding: 0 20px 20px 0;
+}
+.scrollbar__container.scrollbar__container_x {
+  display: inline-block;
+}
+.scrollbar__act .scrollbar__viewport {
+  margin: -17px 0 0 -17px;
+}
+.scrollbar__act .scrollbar__content {
+  margin: 17px 0 0 17px;
+  padding: 0 17px 17px 0;
+}
+.scrollbar__track {
+  position: absolute;
+  display: none;
+}
+.scrollbar__track.scrollbar__act {
+  display: block;
+}
+.scrollbar__track:before {
+  position: absolute;
+}
+.scrollbar__track_y {
+  top: 0;
+  bottom: 20px;
+  right: 0;
+  width: 20px;
+}
+.scrollbar__track_y:before {
+  content: '';
+  top: 0;
+  bottom: 0;
+  right: 9px;
+  width: 2px;
+  background: rgba(255,255,255,0.5);
+}
+.scrollbar__track_x {
+  bottom: 0;
+  left: 0;
+  right: 20px;
+  height: 20px;
+}
+.scrollbar__track_x:before {
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 9px;
+  height: 2px;
+  background: rgba(255,255,255,0.5);
+}
+.scrollbar__handle {
+  position: absolute;
+  transition: box-shadow linear 0.75s;
+  background: #282a36;
+  box-shadow: inset 0 0 15px rgba(0, 170, 0, 0.5);
+}
+.scrollbar__handle:hover {
+  transition: box-shadow ease-out 0.75s, background ease-out 0.75s;
+  background: rgba(0,170,0,1);
+}
+.scrollbar__handle_y {
+  top: 0;
+  right: 0;
+  width: 20px;
+}
+.scrollbar__handle_x {
+  bottom: 0;
+  left: 0;
+  height: 20px;
+}
+.scrollbar__viewport {
+  max-height: 200px;
+  overflow: hidden;
+}
+.scrollbar__content {  
+  overflow: auto;
+  height: 100%;
+  width: 100%;   
+}
+.scrollbar__act .scrollbar__content_x {
+  padding-bottom: 0px;
+}
+.scrollbar__act .scrollbar__content_y {
+  padding-right: 0px;
+}
+
+/* ---S C R O L L B A R */
+
+.scrollbar-3.scrollbar__container {
+  max-width: 800px;
+  margin:0 auto;
+}
+.scrollbar-3 img {
+  vertical-align: top;
+}
+.scrollbar-3 .scrollbar__viewport {
+  max-height: 400px;
+}
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-3">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+// +++S C R O L L B A R
+
+function scrollbar() {
+
+  let scrollbarElms = document.querySelectorAll('[data-scrollbar]');
+
+  function render(){	
+    scrollbarElms.forEach((elmScrollbar) => {	
+      let scrollbarElmClass = elmScrollbar.getAttribute('data-scrollbar');
+      let content = elmScrollbar.cloneNode(true);
+      let html = '<div class="'+ scrollbarElmClass +' scrollbar__container" data-scrollbar="">\n\
+                    <div class="scrollbar__track scrollbar__track_y">\n\
+                      <div class="scrollbar__handle scrollbar__handle_y"></div>\n\
+                    </div>\n\
+                    <div class="scrollbar__track scrollbar__track_x">\n\
+                      <div class="scrollbar__handle scrollbar__handle_x"></div>\n\
+                    </div>\n\
+                    <div class="scrollbar__viewport">\n\
+                      <div class="scrollbar__content">\n\
+                      ' + content.innerHTML + '\n\
+                      </div>\n\
+                    </div>\n\
+                  </div>';
+      elmScrollbar.outerHTML = html;	
+    })
+  }
+  render();
+  
+  scrollbarElms = document.querySelectorAll('[data-scrollbar]');
+
+  scrollbarElms.forEach((elmScrollbar) => {		
+    let trackY = elmScrollbar.querySelector('.scrollbar__track_y');
+    let trackX = elmScrollbar.querySelector('.scrollbar__track_x');
+    let handleY = elmScrollbar.querySelector('.scrollbar__handle_y');
+    let handleX = elmScrollbar.querySelector('.scrollbar__handle_x');
+    let viewport = elmScrollbar.querySelector('.scrollbar__viewport');	
+    let content = elmScrollbar.querySelector('.scrollbar__content');
+    let trackYY0, trackXX0, 
+        trackYH, trackXW, handleYH, handleXW,
+        handleYY0, handleXX0;	
+
+    function trackXYBln(){
+      let handleMinSize = 20;
+      let handleCoefSize = 1;
+      let viewportMaxH = getComputedStyle(viewport).maxHeight;	
+      let contentClientWidth = content.clientWidth;
+      let contentClientHeight = content.clientHeight;			
+      let contentScrollWidth = content.scrollWidth;
+      let contentScrollHeight = content.scrollHeight;
+      let contentDifWidths = contentScrollWidth - contentClientWidth;
+      let contentDifHeights = contentScrollHeight - parseInt(viewportMaxH);
+      let trackYBln = contentDifHeights > 0 ? true : false;
+      let trackXBln = contentDifWidths > 0 ? true : false;
+
+      if(trackYBln == false && trackXBln == false){
+        elmScrollbar.classList.remove('scrollbar__act');
+        trackY.classList.remove('scrollbar__act');
+        content.classList.remove('scrollbar__content_y');
+        trackX.classList.remove('scrollbar__act');
+        content.classList.remove('scrollbar__content_x');
+        return;
+      }
+      if(trackYBln){
+        viewport.style.height = getComputedStyle(viewport).maxHeight;
+        elmScrollbar.classList.add('scrollbar__act');
+        content.classList.add('scrollbar__content_y');
+        trackY.classList.add('scrollbar__act');
+      }else{
+        content.classList.remove('scrollbar__content_y');
+        trackY.classList.remove('scrollbar__act');
+      }
+      if(trackXBln){
+        viewport.style.height = getComputedStyle(viewport).height;
+        elmScrollbar.classList.add('scrollbar__act');
+        content.classList.add('scrollbar__content_x');
+        trackX.classList.add('scrollbar__act');	
+      }else{
+        content.classList.remove('scrollbar__content_x');
+        trackX.classList.remove('scrollbar__act');
+      }
+  
+      contentClientWidth = content.clientWidth;
+      contentClientHeight = content.clientHeight;	
+      
+      if(trackYBln){
+        handleY.style.height = contentClientHeight / contentScrollHeight * 100 * handleCoefSize + "%";
+        if(handleY.clientHeight < handleMinSize){
+          handleY.style.height = handleMinSize + "px";
+        }
+        handleYH = handleY.clientHeight;
+        trackYH = trackY.clientHeight;				
+      }
+      if(trackXBln){
+        handleX.style.width = contentClientWidth / contentScrollWidth * 100 * handleCoefSize + "%";
+        if(handleX.clientWidth < handleMinSize){
+          handleX.style.width = handleMinSize + "px";
+        }
+        handleXW = handleX.clientWidth;
+        trackXW = trackX.clientWidth;
+      }
+    }
+    trackXYBln();
+
+    window.addEventListener('resize', () => {
+      trackXYBln();
+    })
+    
+    let shiftX, shiftY;
+    let handleYMousedownBln = false;
+    let handleXMousedownBln = false;
+
+    handleY.addEventListener('mousedown',(evHandleY) => {
+      evHandleY.preventDefault();
+      if(evHandleY.button != 0) return;
+      
+      handleYMousedownBln = true;
+      trackYY0 = trackY.getBoundingClientRect().top + window.pageYOffset;
+      shiftY = evHandleY.clientY - handleY.getBoundingClientRect().top;
+    })
+
+    handleX.addEventListener('mousedown',(evHandleX) => {
+      evHandleX.preventDefault();
+      if(evHandleX.button != 0) return;
+
+      handleXMousedownBln = true;
+      trackXX0 = trackX.getBoundingClientRect().left + window.pageXOffset;
+      shiftX = evHandleX.clientX - handleX.getBoundingClientRect().left;
+    })
+
+    document.addEventListener('mouseup', (evHandle) => {
+      if(evHandle.button != 0) return;
+      
+      if(handleYMousedownBln){
+        handleYMousedownBln = false;
+      }
+      if(handleXMousedownBln){
+        handleXMousedownBln = false;
+      }
+    })
+
+    document.addEventListener('mousemove', (evHandle) => {
+      if(handleYMousedownBln){
+        handleYY0 = evHandle.pageY - shiftY;
+        let trackY1pxScrollHpx = (content.scrollHeight) / trackYH;
+        
+        if(handleYY0 - trackYY0 <= 0){
+          handleY.style.top = 0;
+          content.scrollTop = 0;
+        }else if(handleYY0 - trackYY0  < trackYH - handleYH){
+          handleY.style.top = handleYY0 - trackYY0 + "px";
+          content.scrollTop = trackY1pxScrollHpx * (handleYY0 - trackYY0);
+        }else{
+          handleY.style.top = trackYH - handleYH + "px";
+          content.scrollTop = content.scrollHeight - content.clientHeight;
+        }
+      }	
+
+      if(handleXMousedownBln){
+        handleXX0 = evHandle.pageX - shiftX;
+        let trackX1pxScrollWpx = (content.scrollWidth) / trackXW;
+        
+        if(handleXX0 - trackXX0 <= 0){
+          handleX.style.left = 0;
+          content.scrollLeft = 0;
+        }else if(handleXX0 - trackXX0  < trackXW - handleXW){
+          handleX.style.left = handleXX0 - trackXX0 + "px";
+          content.scrollLeft = trackX1pxScrollWpx * (handleXX0 - trackXX0);
+        }else{
+          handleX.style.left = trackXW - handleXW + "px";
+          content.scrollLeft = content.scrollWidth - content.clientWidth;
+        }
+      }
+    })
+
+    content.addEventListener('scroll', () => {
+      if(handleYMousedownBln || handleXMousedownBln) return;
+      
+      contentScrollTop = 0;
+      handleY.style.top = (content.scrollTop / (content.scrollHeight - content.clientHeight)) * 
+        (trackYH - handleYH) * 100 / trackYH  + '%';
+      handleX.style.left = (content.scrollLeft / (content.scrollWidth - content.clientWidth)) * 
+        (trackXW - handleXW) * 100 / trackXW  + '%';
+    })
+  })
+}
+
+// ---S C R O L L B A R
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.fonts.ready.then(() => {
+    scrollbar();
+  })
+})
+            </code>
+          </div>  
+        </div>  
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

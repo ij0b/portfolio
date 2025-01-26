@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>M-O-D-A-L _ W-I-N-D-O-W</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/3x3.jpg">
+  <link rel="stylesheet" href="css/css.css" />
+  <link rel="stylesheet" href="css/tabs.css" />
+  <link rel="stylesheet" href="css/scrollbar.css" />
+  <link rel="stylesheet" href="css/modal-window.css" />
+  <script type="text/javascript" src="js/js.js"></script>
+  <script type="text/javascript" src="js/tabs.js"></script>
+  <script type="text/javascript" src="js/scrollbar.js"></script>  
+  <script type="text/javascript" src="js/modal-window.js"></script>
+</head>
+
+<body>
+  <div class="menu-nav menu-nav__act">
+		<div class="menu-nav__hide"></div>
+		<div class="menu-nav__close">&#x2715;</div>
+		<div class="menu-nav__h">
+			<span class="menu-nav__h-1">Н</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">в</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">г</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">ц</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">я</span>
+			<span class="menu-nav__h-1">:</span>
+		</div>
+		<ul class="menu-nav__ul">
+			<li class="menu-nav__li">
+				<a href="js-slider.html" class="menu-nav__a">Слайдер</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-tabs.html" class="menu-nav__a">Табы</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-scrollbar.html" class="menu-nav__a">Скроллбар</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-carousel.html" class="menu-nav__a">Карусель</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-modal-window.html" class="menu-nav__a menu-nav__a-act">Модальное окно</a>
+			</li>
+		</ul>
+		<a href="portfolio.html#anchor-portfolio" class="menu-nav__a menu-nav__a_1">Обратно на страницу портфолио</a>
+	</div>
+
+	<style>
+			.menu-nav{
+					display: none;
+					position:fixed;
+					top:0;
+					bottom:0;
+					left:0;
+					z-index:9999;
+					margin:auto 20px auto 0;
+					background-color: #282a36;
+					border: 5px solid #0a0;
+					box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+			}
+			.menu-nav__act{
+					display: table;
+			}
+			.menu-nav__hide{
+					color: #fff;
+					position: absolute;
+					bottom: 0;
+					top:0;
+					right: -22px;
+					margin:auto 0;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 38px;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					padding:0 0 0 15px;
+					background: radial-gradient(circle, #000000 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__hide-act .menu-nav__hide{
+					padding:0 0 0 4px;
+			}
+			.menu-nav__hide:before{
+					content:'\2B05';
+			}
+			.menu-nav__hide-act .menu-nav__hide:before{
+					content:'\27A1';
+			}
+			.menu-nav__hide:hover{
+					box-shadow: 0 0 10px #fff;
+					padding:0 0 0 9px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__hide:hover{
+					padding:0 0 0 9px;
+			}
+			.menu-nav__hide-act{
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__ul,
+			.menu-nav__hide-act .menu-nav__a{
+					display: none;
+			}
+			.menu-nav__close{
+					position: absolute;
+					top: -20px;
+					right: -22px;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 54px;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__close:hover{
+					box-shadow: 0 0 10px #fff;
+					line-height: 29px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__h{
+					color:#fff;
+					font-size:20px;
+					text-align: center;
+					margin:10px 0 10px;
+          font-family: "Time New Romans", sans-serif;
+			}
+			.menu-nav__hide-act .menu-nav__h{
+					margin:10px 0 ;
+			}
+			.menu-nav__hide-act .menu-nav__h-1{
+					display: block;
+					padding:0 25px 0 5px;
+					line-height:80%;
+			}
+			.menu-nav__hide-act .menu-nav__h-1:last-child{
+					display: none;
+			}
+			.menu-nav__ul{
+					padding: 0 25px 5px 15px;
+					margin:0 0 0 15px;
+			}
+			.menu-nav__li{
+          font-family: "Time New Romans", sans-serif;
+          font-size: 14px;
+					margin:5px 0 15px;
+					list-style: decimal;
+					color: #fff;
+			}
+			.menu-nav__a{
+					color: #fff;
+					font-family: "Time New Romans", sans-serif;
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 14px;
+					background: #0a0;
+					border-radius: 14px;
+					box-shadow: 0 5px #070;
+					margin:0 0 0 10px;
+					text-decoration: underline;
+			}
+			.menu-nav__a:focus{
+					color: #fff;
+			}
+			.menu-nav .menu-nav__a:hover{
+					color:#fff !important;
+					box-shadow: 0 5px #070, 0px 5px 6px #fff;
+			}
+			.menu-nav__a-act{
+					background: #75f;
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+					cursor:default;
+			}
+			.menu-nav .menu-nav__a-act:hover{
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+			}
+			.menu-nav__a_1{
+				display: block;
+				margin:0 25px 20px 25px;
+				text-align: center;
+			}
+	</style>
+
+	<script>
+		function menuNav(){
+			let container = document.querySelector('.menu-nav');
+			let close = container.querySelector('.menu-nav__close');
+			let hide = container.querySelector('.menu-nav__hide');
+		
+			close.addEventListener('click', () => {
+				[container, ...container.querySelectorAll('.menu-nav__act')].forEach( (elmAct) => {
+					elmAct.classList.remove('menu-nav__act');
+				})
+			})
+
+			hide.addEventListener('click', () => {
+				container.classList.toggle('menu-nav__hide-act');
+			})
+		}
+		menuNav();
+	</script>
+
+
+
+  <div class="container">
+    <h1 class="fs-h1">
+      M-O-D-A-L _ W-I-N-D-O-W
+    </h1>
+    <div class="fs-w">
+      <span class="fs-w-1">
+        Модальное окно — окно, которое появляется на сайте
+        поверх других документов и окон и делает весь находящийся
+        под ним контент недоступным до тех пор, пока вы с ним 
+        не провзаимодействуете.
+        <br>
+        Нажатие на ссылку (текст\картинка) отображает соответствующий ей контент 
+        в всплывающем модальном окне.
+      </span> 
+    </div>
+  </div>  
+
+  <div class="container10">
+    <div class="fs-example">
+      <h2 class="fs-h2 fs-h2_1">
+        Пример №1 Б а з о в ы й (1 элемент)
+      </h2>
+      <a href="" class="modal-window__a" data-modal-window-a="my-value-1">
+        Ссылка на модальное окно
+      </a>
+      <div class="modal-window__content" data-modal-window-content="my-value-1">
+        <h4 class="fs-h4 fs-h4__1">
+          Модальное окно &minus;> контент.
+        </h4>
+        <b class="fs-b">Длинный текст</b>
+        текст текст текст текст
+        текст текст текст текст текст
+        текст текст текст текст текст текст
+        текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст
+        текст текст текст текст текст текст текст текст текст.
+      </div>
+    </div>
+
+    <div class="fs-example">
+      <h2 class="fs-h2 fs-h2_1">
+        Пример №2 Группа элементов контента (1+ элементов)
+      </h2>
+      <div data-modal-window-group=".mw-group__elm-1" data-modal-window-a="my-value-2">
+        <a href="" class="modal-window__a" data-modal-window-href="1">
+          Ссылка на модальное окно с группой №1 - 1 элементом контента.
+        </a>
+        <a href="" class="modal-window__a" data-modal-window-href="2">
+          Ссылка на модальное окно с группой №1 - 2 элементом контента.
+        </a>
+      </div>
+      
+      <div data-modal-window-group=".mw-group__elm-1" data-modal-window-content="my-value-2">
+        <div class="modal-window__content mw-group__elm-1">
+          <h4 class="fs-h4 fs-h4__1">
+            Модальное окно &minus;> контент группа №1 - 1 элемент контента.
+          </h4>
+          <b class="fs-b">Длинный текст</b>
+          текст текст текст текст
+          текст текст текст текст текст
+          текст текст текст текст текст текст
+          текст текст текст текст текст текст текст
+          текст текст текст текст текст текст текст текст
+          текст текст текст текст текст текст текст текст текст.
+        </div>
+        <div class="modal-window__content mw-group__elm-1">
+          <h4 class="fs-h4 fs-h4__1">
+            Модальное окно &minus;> контент группа №1 - 2 элемент контента.
+          </h4>
+          <b class="fs-b">Длинный текст</b>
+          текст текст текст текст
+          текст текст текст текст текст
+          текст текст текст текст текст текст
+          текст текст текст текст текст текст текст
+          текст текст текст текст текст текст текст текст
+          текст текст текст текст текст текст текст текст текст.
+        </div>
+      </div>
+    </div>
+    
+    <div class="fs-example">
+      <h2 class="fs-h2 fs-h2_1">
+        Пример №3 Г а л е р е я (1+ элементов)
+      </h2>
+      <div class="gallery" data-modal-window-group="img" data-modal-window-a="my-value-3">
+        <img class="gallery__img" src="img/gif221.gif" alt="" data-modal-window-href="img/gif221.gif">
+        <img class="gallery__img" src="img/160.gif" alt="" data-modal-window-href="img/160.gif">
+        <img class="gallery__img" src="img/gif245.gif" alt="" data-modal-window-href="img/gif245.gif">
+        <img class="gallery__img" src="img/155.gif" alt="" data-modal-window-href="img/155.gif">
+        <img class="gallery__img" src="img/148.gif" alt="" data-modal-window-href="img/148.gif">
+        <img class="gallery__img" src="img/125.gif" alt="" data-modal-window-href="img/125.gif">
+        <img class="gallery__img" src="img/149.gif" alt="" data-modal-window-href="img/149.gif">
+        <img class="gallery__img" src="img/gif210.gif" alt="" data-modal-window-href="img/gif210.gif">
+        <img class="gallery__img" src="img/gif222.gif" alt="" data-modal-window-href="img/gif222.gif">
+      </div>
+  
+      <div data-modal-window-group="img" data-modal-window-content="my-value-3"> 
+        <img src="img/gif221.gif" alt=""> 
+        <img src="img/160.gif" alt="">
+        <img src="img/gif245.gif" alt="">
+        <img src="img/155.gif" alt="">
+        <img src="img/148.gif" alt="">
+        <img src="img/125.gif" alt="">
+        <img src="img/149.gif" alt="">
+        <img src="img/gif210.gif" alt="">
+        <img src="img/gif222.gif" alt="">
+      </div>
+    </div>
+  </div>  
+
+
+
+  <div class="container">
+    <h2 class="fs-h2">
+      Подробнее
+    </h2>
+    <div class="fs-w1">
+      <h4 class="fs-h4">
+        Гибкость
+      </h4>
+      <ol class="fs-ol fs-ol_1">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            Предусматривает возможность не создавать или перестраивать 
+            структуру html-разметки для скрипта модального окна, 
+            а встраивать в уже существующую разметку
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            Добавлять атрибуты точечно только нужным тегам в узле
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            Элементы группы контента могут быть не только картинки,
+            но и почти любой тег с настраиваемым селектором класса
+          </div>
+        </li>
+      </ol>
+
+      <h4 class="fs-h4">
+        Реализация
+      </h4>
+
+      <p class="fs-p">
+        Рендеринг (отрисовка) каркаса модального окна происходит через js.<br>
+        Настройка состоит из добавления тегам нескольких 
+        пользовательских атрибутов.<br>
+        <b class="fs-b">Пример №1 (1 элемент)</b> настройка 
+        (пользовательские атрибуты):
+      </p>
+      <ol class="fs-ol">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-modal-window-a="my-value-1"</b> &mdash;
+            добавляется ссылке (текст/картинка/почти любой тег) на контент
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-modal-window-content="my-value-1"</b> &mdash; 
+            добавляется контенту (почти любой тег) который планируется
+            отображать по нажатию на ссылку. Значение атрибута контента = 
+            значению атрибута ссылке = "my-value-1"
+          </div>
+        </li>
+      </ol>
+      <p class="fs-p">
+        На этом настройка завершается, это достаточно локанично.
+      </p>
+      <p class="fs-p">
+        <b class="fs-b">Пример №2/№3 (+1 элементов)</b> настройка 
+        (пользовательские атрибуты):
+      </p>
+      <ol class="fs-ol">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-modal-window-group="img"/ ".selectorClass"</b> &mdash;
+            Добавляется тегу содержащему элементы-ссылки группы и тегу
+            содержащему элементы-контент группы. Значение "img" для группы 
+            состоящей из картинок (тег img). Значение ".selectorClass" есть 
+            селектор класса, для группы состоящей из почти любых тегов
+            с этим классом.
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-modal-window-a="my-value-3"</b> &mdash; 
+            добавляется тегу содержащему элементы-ссылки группы.
+            Значение атрибута группы контента = значению атрибута группы 
+            ссылок = "my-value-3".
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-modal-window-content="my-value-3"</b> &mdash;
+            добавляется тегу содержащему элементы-контент группы.
+            Значение атрибута группы контента = значению атрибута группы 
+            ссылок = "my-value-3".
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            <b class="fs-b">data-modal-window-href="img/gif221.gif"/ "1"</b> &mdash;
+            внутри тега группы ссылок добавляется ссылке.
+            Значение атрибута элемента группы ссылки = значению атрибута
+            элемента группы контента src тега img = "img/gif221.gif" 
+            (или "1" порядковому номеру элемента группы конетнта если значение
+            атрибута data-modal-window-group равно не "img", а селектору класса)
+          </div>
+        </li>
+      </ol>
+      <p class="fs-p">
+        <b class="fs-b">Коротко.</b> Два атрибута "-group" и "-a" добавляется 
+        контейнеру-тегу содержащему ссылки "-href", и два атрибута
+        "-group" и "-content" добавляется контейнеру-тегу содержащему 
+        элементы-контент группы (или картинки если "-group" = "img"
+        или почти любой тег с селектором "selectorClass", если "-group"
+         = ".selectorClass").
+      </p>
+    </div>
+  </div>  
+
+
+
+  <div class="container10 container10_0">
+    <h2 class="fs-h2">
+      КОД
+    </h2>
+
+    <div class="code">
+      <div class='tabs__tablist'>
+        <div class='tabs__tab code__tab tabs__act' data-tabs="code-1 btn-1">
+          HTML
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-2">
+          CSS
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-3">
+          JS
+        </div>
+      </div>
+      <div class="code__box">
+        <div class="code__panel tabs__act" data-tabs="code-1 panel-1">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+<div class="fs-example">
+  <h2 class="fs-h2 fs-h2_1">
+    Пример №1 Б а з о в ы й (1 элемент)
+  </h2>
+  <a href="" class="modal-window__a" data-modal-window-a="my-value-1">
+    Ссылка на модальное окно
+  </a>
+  <div class="modal-window__content" data-modal-window-content="my-value-1">
+    <h4 class="fs-h4 fs-h4__1">
+      Модальное окно &minus;> контент.
+    </h4>
+    <b class="fs-b">Длинный текст</b>
+    текст текст текст текст
+    текст текст текст текст текст
+    текст текст текст текст текст текст
+    текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст
+    текст текст текст текст текст текст текст текст текст.
+  </div>
+</div>
+
+<div class="fs-example">
+  <h2 class="fs-h2 fs-h2_1">
+    Пример №2 Группа элементов контента (1+ элементов)
+  </h2>
+  <div data-modal-window-group=".mw-group__elm-1" data-modal-window-a="my-value-2">
+    <a href="" class="modal-window__a" data-modal-window-href="1">
+      Ссылка на модальное окно с группой №1 - 1 элементом контента.
+    </a>
+    <a href="" class="modal-window__a" data-modal-window-href="2">
+      Ссылка на модальное окно с группой №1 - 2 элементом контента.
+    </a>
+  </div>
+  
+  <div data-modal-window-group=".mw-group__elm-1" data-modal-window-content="my-value-2">
+    <div class="modal-window__content mw-group__elm-1">
+      <h4 class="fs-h4 fs-h4__1">
+        Модальное окно &minus;> контент группа №1 - 1 элемент контента.
+      </h4>
+      <b class="fs-b">Длинный текст</b>
+      текст текст текст текст
+      текст текст текст текст текст
+      текст текст текст текст текст текст
+      текст текст текст текст текст текст текст
+      текст текст текст текст текст текст текст текст
+      текст текст текст текст текст текст текст текст текст.
+    </div>
+    <div class="modal-window__content mw-group__elm-1">
+      <h4 class="fs-h4 fs-h4__1">
+        Модальное окно &minus;> контент группа №1 - 2 элемент контента.
+      </h4>
+      <b class="fs-b">Длинный текст</b>
+      текст текст текст текст
+      текст текст текст текст текст
+      текст текст текст текст текст текст
+      текст текст текст текст текст текст текст
+      текст текст текст текст текст текст текст текст
+      текст текст текст текст текст текст текст текст текст.
+    </div>
+  </div>
+</div>
+
+<div class="fs-example">
+  <h2 class="fs-h2 fs-h2_1">
+    Пример №3 Г а л е р е я (1+ элементов)
+  </h2>
+  <div class="gallery" data-modal-window-group="img" data-modal-window-a="my-value-3">
+    <img class="gallery__img" src="img/gif221.gif" alt="" data-modal-window-href="img/gif221.gif">
+    <img class="gallery__img" src="img/160.gif" alt="" data-modal-window-href="img/160.gif">
+    <img class="gallery__img" src="img/gif245.gif" alt="" data-modal-window-href="img/gif245.gif">
+    <img class="gallery__img" src="img/155.gif" alt="" data-modal-window-href="img/155.gif">
+    <img class="gallery__img" src="img/148.gif" alt="" data-modal-window-href="img/148.gif">
+    <img class="gallery__img" src="img/125.gif" alt="" data-modal-window-href="img/125.gif">
+    <img class="gallery__img" src="img/149.gif" alt="" data-modal-window-href="img/149.gif">
+    <img class="gallery__img" src="img/gif210.gif" alt="" data-modal-window-href="img/gif210.gif">
+    <img class="gallery__img" src="img/gif222.gif" alt="" data-modal-window-href="img/gif222.gif">
+  </div>
+
+  <div data-modal-window-group="img" data-modal-window-content="my-value-3"> 
+    <img src="img/gif221.gif" alt=""> 
+    <img src="img/160.gif" alt="">
+    <img src="img/gif245.gif" alt="">
+    <img src="img/155.gif" alt="">
+    <img src="img/148.gif" alt="">
+    <img src="img/125.gif" alt="">
+    <img src="img/149.gif" alt="">
+    <img src="img/gif210.gif" alt="">
+    <img src="img/gif222.gif" alt="">
+  </div>
+</div>
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-2">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+/* +++M O D A L _ W I N D O W */
+
+[data-modal-window-href],
+[data-modal-window-a] {
+  cursor: pointer;
+}
+[data-modal-window-group][data-modal-window-a] {
+  cursor: default;
+}
+.modal-window,
+[data-modal-window-content],
+[data-modal-window-group-elm] {
+  display: none;
+}
+.modal-window.modal-window__act,
+[data-modal-window-content].modal-window__act,
+[data-modal-window-group-elm].modal-window__act {
+  display: block;
+}
+.modal-window__a {
+  display: inline-block;
+  color: #fff;
+  transition: all ease-in-out 0.75s
+}
+.modal-window__a:hover {
+  text-shadow: 0 0 10px #0a0;
+  transition: all ease-in-out 0.75s;
+}
+.modal-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 55;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+}
+.modal-window__arw {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 55;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: '66';
+  font-size: 25px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all ease-out 0.75s;
+  background: #000;
+  background: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(255,255,255,1) 100%);
+}
+.modal-window__arw.modal-window__act {
+  display: block;
+}
+.modal-window__arw_l {
+  left: 13px;
+}
+.modal-window__arw_r {
+  right: 13px;
+}
+.modal-window__arw:hover {
+  box-shadow: 0 0 10px #fff;
+  transition: all ease-out 0.75s;
+}
+.modal-window__t {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+}
+.modal-window__td {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 30px;
+}
+.modal-window__wrapper {
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 0 100px #fff;
+  border-radius: 10px;
+  border: 5px solid #000;
+}
+.modal-window__inner {
+  font-family: "75";
+}
+.modal-window__inner img {
+  max-width: 100%;
+  max-height: calc(100vh - 70px);
+}
+.modal-window__close {
+  position: absolute;
+  top: -20px;
+  right: -22px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  line-height: 54px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: '66';
+  font-size: 27px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all linear 0.75s;
+  background: #000;
+  background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+}
+.modal-window__close:hover {
+  box-shadow: 0 0 10px #fff; 
+  line-height: 29px;
+  transition: all ease-out 0.75s;
+}
+.modal-window__content {
+  padding: 25px;
+}
+
+/* ---M O D A L _ W I N D O W */
+
+.gallery {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  background-color: #282a36;
+}
+.gallery__img {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  transition: z-index ease-in 1s, transform ease-in 1s,box-shadow ease-in 1s;
+  position: relative;  
+  z-index: 5;
+}
+.gallery__img:hover {
+  z-index: 6; 
+  transform: scale(1.05);
+  transition: transform ease-in-out 1s,box-shadow ease-in-out 1s;
+  box-shadow: 0 0 20px rgba(0, 170, 0, 1);
+}
+
+@media (max-width: 1200px){
+  .gallery__img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767px){
+  .modal-window__td {
+    padding: 15px;
+  }
+  .modal-window__arw {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+  }
+  .modal-window__arw_l {
+    left: 5px;
+  }
+  .modal-window__arw_r {
+    right: 5px;
+  }
+  .modal-window__close {
+    top: -12px;
+    right: -13px;
+    width: 24px;
+    height: 24px;
+    line-height: 32px;
+    font-size: 15px;
+  }
+  .modal-window__close:hover {
+    line-height: 17px;
+  }
+  .modal-window__wrapper {
+    border: 3px solid #000;    
+  }
+  .modal-window__inner {
+    font-size: 16px;
+  }
+  .modal-window__content {
+    padding: 15px 10px;
+  }
+  .gallery__img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 479px){
+  .gallery {
+    gap: 10px;
+  }
+  .gallery__img {
+    height: 150px;
+  }
+}
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-3">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+// +++M O D A L _ W I N D O W
+
+function modalWindow() {
+
+  let container;
+  let close;
+  let inner;
+  let groupAct;
+  let groupElmAct;
+  let arws;
+
+  function render(){
+    let html = '<div class="modal-window">\n\
+                  <div class="modal-window__arw modal-window__arw_l">&lt;</div>\n\
+                  <div class="modal-window__arw modal-window__arw_r">&gt;</div>\n\
+                  <div class="modal-window__t">\n\
+                    <div class="modal-window__td">\n\
+                      <div class="modal-window__wrapper">\n\
+                        <div class="modal-window__close">x</div>\n\
+                        <div class="modal-window__inner">\n\
+                          \n\
+                        </div>\n\
+                      </div>\n\
+                    </div>\n\
+                  </div>\n\
+                </div>';
+    document.body.insertAdjacentHTML('beforeend',html);
+
+    document.querySelectorAll('[data-modal-window-content]').forEach((elmContent) => {
+      if(elmContent.hasAttribute('data-modal-window-group')){				
+        let groupSelector = elmContent.getAttribute('data-modal-window-group');
+        let groupElms = elmContent.querySelectorAll(groupSelector);
+
+        groupElms.forEach((elmGroup) => {
+          elmGroup.setAttribute('data-modal-window-group-elm','');
+        })
+      }
+
+      document.querySelector('.modal-window__inner').append(elmContent);
+    })
+    
+    arws = document.querySelectorAll('.modal-window__arw');
+    container = document.querySelector('.modal-window');	
+    inner = container.querySelector('.modal-window__wrapper');
+    close = container.querySelector('.modal-window__close');
+    
+    close.addEventListener('click', () => {
+      [container, ...container.querySelectorAll('.modal-window__act')].forEach( (elmAct) => {
+        elmAct.classList.remove('modal-window__act');
+      })
+    })
+
+    container.addEventListener('click', () => {
+      close.click();
+    })
+    
+    inner.addEventListener('click', (evInner) => {
+      evInner.stopPropagation();
+    })
+  }
+  render();
+
+  function oneElm(){
+    document.querySelectorAll('[data-modal-window-a]').forEach((elmA) => {
+      if(elmA.hasAttribute('data-modal-window-group')) return;
+  
+      elmA.addEventListener('click', (evA) => {
+        evA.preventDefault();				
+        arws.forEach((elmArw) => {
+          elmArw.classList.remove('modal-window__act');
+        })
+
+        let anchor = elmA.getAttribute('data-modal-window-a');
+        let content = document.querySelector('[data-modal-window-content = "'+ anchor + '"]');
+  
+        container.classList.add('modal-window__act');
+        content.classList.add('modal-window__act');		
+      })
+    })
+  }
+  oneElm();
+
+  function manyElms(){
+    document.querySelectorAll('[data-modal-window-group][data-modal-window-a]').forEach((elmGroupC) => {
+      let groupSelector = elmGroupC.getAttribute('data-modal-window-group');
+      let groupAnchor = elmGroupC.getAttribute('data-modal-window-a');
+      let groupContent = document.querySelector('[data-modal-window-content = ' + groupAnchor + ']');
+
+      elmGroupC.querySelectorAll('[data-modal-window-href]').forEach((elmHref) => {
+        elmHref.addEventListener('click', (evHref) => {
+          evHref.preventDefault();
+          arws.forEach((elmArw) => {
+            elmArw.classList.add('modal-window__act');
+          })
+
+          let anchor = elmHref.getAttribute('data-modal-window-href');
+          let groupElm;
+
+          if(groupSelector == 'img'){
+            groupElm = groupContent.querySelector('[src = "'+ anchor + '"]');
+          }else if(/^[.]/.test(groupSelector)){
+            groupElm = groupContent.querySelector(groupSelector + ':nth-child('+ anchor + ')');
+          }
+    
+          container.classList.add('modal-window__act');
+          groupContent.classList.add('modal-window__act');
+          groupAct = groupContent;
+          groupElm.classList.add('modal-window__act');
+          groupElmAct = groupElm;
+        })
+      })
+    })
+
+    let groupElmActId = 0;
+    
+    document.querySelectorAll('.modal-window__arw').forEach((elmArw) => {
+      elmArw.addEventListener('click', (evArw) => {
+        evArw.stopPropagation();
+        let groupElms = groupAct.querySelectorAll('[data-modal-window-group-elm]');
+        groupElmActId = +Array.from(groupElms).indexOf(groupElmAct);
+
+        if(elmArw.classList.contains('modal-window__arw_l')){
+          groupElmActId = groupElmActId > 0 ? --groupElmActId : groupElms.length - 1;
+        }
+        if(elmArw.classList.contains('modal-window__arw_r')){
+          groupElmActId = groupElmActId < groupElms.length - 1 ? ++groupElmActId : 0;
+        }
+
+        groupElmAct.classList.remove('modal-window__act');
+        groupElms[groupElmActId].classList.add('modal-window__act');
+        groupElmAct = groupElms[groupElmActId];
+      })
+    })
+  }
+  manyElms();	
+}
+
+// ---M O D A L _ W I N D O W
+
+document.addEventListener('DOMContentLoaded', () => {
+  modalWindow();
+})
+            </code>
+          </div>  
+        </div>  
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,329 @@
+/* БД
+#75f; - фиолетовый
+
+*/
+
+
+/* @font-face{font-family:"5";src: url('../fonts/beer_money.woff2') format('woff2');}
+@font-face{font-family:"6";src: url('../fonts/bezpredmetizm.woff2') format('woff2');}
+@font-face{font-family:"7";src: url('../fonts/BoroughGroteskPro-Bevelled.woff2') format('woff2');}
+@font-face{font-family:"17";src: url('../fonts/gunnyrewritten.woff2') format('woff2');}
+@font-face{font-family:"18";src: url('../fonts/LifehackBasic-Regular.woff2') format('woff2');}
+@font-face{font-family:"27";src: url('../fonts/LifehackSans-Medium.woff2') format('woff2');}
+@font-face{font-family:"29";src: url('../fonts/marckscript.woff2') format('woff2');}
+@font-face{font-family:"52";src: url('../fonts/TransformaScript-Light.woff2') format('woff2');} */
+@font-face{font-family:"54";src: url('../fonts/TransformaScript-Regular.woff2') format('woff2');}
+@font-face{font-family:"55";src: url('../fonts/TransformaScript-SemiBold.woff2') format('woff2');}
+/* @font-face{font-family:"58";src: url('../fonts/valentina.woff2') format('woff2');} */
+
+@font-face{font-family:"59";src: url('../fonts/FiraCode-Light.woff2') format('woff2');}
+/* @font-face{font-family:"60";src: url('../fonts/FiraCode-Regular.woff2') format('woff2');}
+@font-face{font-family:"61";src: url('../fonts/FiraCode-Medium.woff2') format('woff2');}
+@font-face{font-family:"62";src: url('../fonts/FiraCode-Bold.woff2') format('woff2');}
+@font-face{font-family:"63";src: url('../fonts/FiraCode-Retina.woff2') format('woff2');}
+@font-face{font-family:"64";src: url('../fonts/trixiecyr-plain.woff2') format('woff2');}
+@font-face{font-family:"65";src: url('../fonts/ds_moster.woff2') format('woff2');} */
+@font-face{font-family:"66";src: url('../fonts/X-FilesCyr.woff2') format('woff2');} 
+/* @font-face{font-family:"67";src: url('../fonts/astakhov_dished_glamour.woff2') format('woff2');}
+@font-face{font-family:"68";src: url('../fonts/a_domino.woff2') format('woff2');}
+@font-face{font-family:"69";src: url('../fonts/a_domino_bold.woff2') format('woff2');}
+
+@font-face{font-family:"71";src: url('../fonts/a_domino_italic.woff2') format('woff2');}
+@font-face{font-family:"73";src: url('../fonts/a_dominorevobl.woff2') format('woff2');}
+@font-face{font-family:"74";src: url('../fonts/academytt-bold.woff2') format('woff2');} */
+@font-face{font-family:"75";src: url('../fonts/academytt-italic.woff2') format('woff2');}
+/* @font-face{font-family:"76";src: url('../fonts/academytt-regular.woff2') format('woff2');}
+@font-face{font-family:"79";src: url('../fonts/nexa_script_light.woff2') format('woff2');}*/
+@font-face{font-family:"82";src: url('../fonts/nexa_script.woff2') format('woff2');} 
+/* @font-face{font-family:"88";src: url('../fonts/ProximaNovaExCn-regular.woff2') format('woff2');}
+@font-face{font-family:"90";src: url('../fonts/ProximaNovaExCn-light.woff2') format('woff2');} */
+/* 
+
+с засечками похожими на рукопись CascadiaCode CormorantInfant? IBMPlexSerif? 
+iAWriterDuoS! iAWriterQuattroS! BreeCYR? Alegreya? EBGaramond? NCTGranite! GentiumBookPlus TTLivretTextTrial?
+VollkornSC PFHandbookPro!
+
+CartographCF BlenderPro!
+
+без категории Kurier GillSansC
+
+символы в общем стандартном стиле TTChocolates BoschSansCond LibraSans Bellota
+Candara!
+
+заглавные Chekharda TTTricksStencil KabrioAbarth Arturo
+
+компактные TTBluescreens Margit JetBrainsMonoNL TTChocolatesCondensed TTLimesSans
+TTBluescreens
+
+округлый TTMilks Geologica ChevinCyrillic
+
+font-family: "5";
+font-family: "6";
+font-family: "7";
+font-family: "17";
+font-family: "18";
+font-family: "27";
+font-family: "29";
+font-family: "52";
+font-family: "54";
+font-family: "55";
+font-family: "58";
+
+font-family: "65";
+font-family: "66";
+font-family: "67";
+font-family: "68";
+font-family: "69";
+font-family: "71";
+font-family: "73";
+font-family: "74";
+font-family: "75";
+font-family: "76";
+font-family: "79";
+font-family: "82";
+font-family: "88";
+font-family: "90"; */
+
+html{
+	/* 5 6 7 17 18 27 29 52 58 */
+	/* font-family: "7";
+	font-family: "17";
+	font-family: "18";
+	font-family: "27";
+	font-family: "29"; */
+	/* font-family: "55"; */
+	/* font-family: "58"; */
+
+	/* font-family: "5";
+	font-family: "6";
+	font-family: "52"; */
+
+	font-family: "54";
+	font-size:30px;
+}
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+.container{
+	padding-right:30px;
+	padding-left:30px;
+}
+.container10{
+	padding: 50px 30px;
+	background: #282a36;
+	color: #fff;
+	margin: 0 0 50px;
+}
+.container10_0{
+	margin: 0;
+}
+
+.fs-h1{
+	text-align: center;
+	font-weight:400;
+	font-size: 2em;
+	font-family: "55";
+	/* font-family: "82"; */
+	margin:50px 0 15px;
+
+	/* font-family: "54"; */
+	text-shadow: 0 0 10px;
+	/* font-family: "55"; */
+	/* font-family: "75"; */
+	/* font-style: italic; */
+	
+
+	/* font-family: "58"; */
+	/* overflow:hidden; */
+}
+/* .fs-h1-1{
+	display:inline-block;
+	transform:matrix3d(1, 0, 0, 0.000, 0.0, 1, 0, -0.007, 0, 0, 1, 0, 0, 0, 0, 1)
+} */
+.fs-h2{
+	text-align: center;	
+	font-weight:400;
+	font-size: 1.67em;
+	font-family: "5";
+	font-family: "55";
+	font-family: "82";
+	margin:0 0 5px;
+	/* font-family: "58"; */
+}
+.fs-h2_1{
+	margin-bottom: 25px;
+}
+.fs-h3{
+	text-align: center;	
+	font-weight:400;
+	font-size: 1.33em;
+	font-family: "5";
+	font-family: "55";
+	font-family: "82";
+	margin:0 0 5px;
+	/* font-family: "58"; */
+}
+.fs-h4{
+	text-align: center;	
+	/* font-weight:400; */
+	margin:0 0 5px;
+	/* text-shadow: 0 0 10px rgba(119, 85, 255, 1); */
+	/* color: #75f; */
+}
+.fs-w{
+	/* font-size: 20px; */
+	font-family: "6";
+	font-family: "52";
+	text-align: center;
+	margin-bottom: 25px;
+	font-family: "68";
+	font-family: "75";
+	font-size: 1.25em;
+}
+.fs-w-1{
+	/* border-bottom: 1px solid;
+	border-bottom-style: inset; */
+	text-shadow: 0 0 10px rgba(119, 85, 255, 1);
+	color: #75f;	    
+}
+.fs-w1{
+	/* font-size: 20px; */
+	font-family: "6";
+	font-family: "52";
+	font-family: "75";
+	text-align: center;
+	margin-bottom: 60px;
+	text-align: left;
+}
+.fs-p:not(:last-child){
+	margin-bottom: 10px;
+}
+.fs-b{
+	text-shadow: 0 0 10px rgba(119, 85, 255, 1);
+	color: #75f;
+	font-weight:400;
+}
+.fs-ol{
+	margin-left: 40px;
+	counter-reset: chapter 0;
+	list-style:none;
+	display:table;
+	margin-bottom: 10px;
+}
+.fs-ol_1{
+	margin-left: 0;
+}
+.fs-li{
+	display:table-row;
+}
+.fs-li:before {
+	counter-increment: chapter;    
+	content:counter(chapter) ". ";
+	padding: 0 10px 0 0;
+	display: table-cell;
+	text-align: left;
+}
+.fs-li-txt{
+	display: table-cell;
+}
+.fs-example{
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.code{
+	
+}
+.code__tab{
+
+}
+.code__scrollbar-1 .scrollbar__viewport{
+  max-height: 430px;
+}
+.code__box{
+	font-size:16px;
+	background-color: #000;
+	background-color: #282a36;
+	border-left:5px solid #0a0;
+	border-left:5px solid #75f;
+	border:5px solid #75f;
+	border:5px solid #0a0;
+	box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+	padding: 15px 10px;
+}
+.code__text{
+	font-family: "59";	
+	white-space:pre;
+	color: #fff;
+	height: 430px;
+	padding: 0 10px;
+	/* tab-size: 4;
+  transition: tab-size 0.2s; */
+	overflow:auto;
+}
+
+
+
+
+
+/* ===================== +++M E D I A ===================== */
+
+@media (min-width: 2000px){
+  .container10{
+    padding-right:20%;
+		padding-left:20%;
+  }
+}
+
+@media (max-width: 1200px){
+	html{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 991px){
+
+}
+
+@media (max-width: 767px){
+	.fs-h4__1{
+    font-size: 20px;
+  }
+	.container,
+	.container10{
+    padding-right:15px;
+    padding-left:15px;
+  }
+	.code__tab{
+		text-align: center;
+		width: auto;
+	}
+	html{
+		font-size: 16px;
+	}
+	.code__text{
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 650px){
+	.code__text{
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 479px){
+	.code__text{
+		font-size: 12px;
+	}
+	.fs-ol {
+    margin-left: 10px;
+  }
+  html{
+    font-size: 14px;
+  }
+}
+
+/* ===================== ---M E D I A ===================== */

@@ -1,0 +1,122 @@
+/* +++S C R O L L B A R */
+
+[data-scrollbar] {
+  overflow: hidden;
+}
+.scrollbar__container {
+  position: relative;
+  z-index: 5;
+  padding: 0 20px 20px 0;
+}
+.scrollbar__container.scrollbar__container_x {
+  display: inline-block;
+}
+.scrollbar__act .scrollbar__viewport {
+  margin: -17px 0 0 -17px;
+}
+.scrollbar__act .scrollbar__content {
+  margin: 17px 0 0 17px;
+  padding: 0 17px 17px 0;
+}
+.scrollbar__track {
+  position: absolute;
+  display: none;
+}
+.scrollbar__track.scrollbar__act {
+  display: block;
+}
+.scrollbar__track:before {
+  position: absolute;
+}
+.scrollbar__track_y {
+  top: 0;
+  bottom: 20px;
+  right: 0;
+  width: 20px;
+}
+.scrollbar__track_y:before {
+  content: '';
+  top: 0;
+  bottom: 0;
+  right: 9px;
+  width: 2px;
+  background: rgba(255,255,255,0.5);
+}
+.scrollbar__track_x {
+  bottom: 0;
+  left: 0;
+  right: 20px;
+  height: 20px;
+}
+.scrollbar__track_x:before {
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 9px;
+  height: 2px;
+  background: rgba(255,255,255,0.5);
+}
+.scrollbar__handle {
+  position: absolute;
+  transition: box-shadow linear 0.75s;
+  background: #282a36;
+  box-shadow: inset 0 0 15px rgba(0, 170, 0, 0.5);
+}
+.scrollbar__handle:hover {
+  transition: box-shadow ease-out 0.75s, background ease-out 0.75s;
+  background: rgba(0,170,0,1);
+}
+.scrollbar__handle_y {
+  top: 0;
+  right: 0;
+  width: 20px;
+}
+.scrollbar__handle_x {
+  bottom: 0;
+  left: 0;
+  height: 20px;
+}
+.scrollbar__viewport {
+  max-height: 200px;
+  overflow: hidden;
+}
+.scrollbar__content {  
+  overflow: auto;
+  height: 100%;
+  width: 100%;   
+}
+.scrollbar__act .scrollbar__content_x {
+  padding-bottom: 0px;
+}
+.scrollbar__act .scrollbar__content_y {
+  padding-right: 0px;
+}
+
+/* ---S C R O L L B A R */
+
+.scrollbar-3.scrollbar__container {
+  max-width: 800px;
+  margin:0 auto;
+}
+.scrollbar-3 img {
+  vertical-align: top;
+}
+.scrollbar-3 .scrollbar__viewport {
+  max-height: 400px;
+}
+
+/* ===================== +++M E D I A ===================== */
+
+@media (max-width: 1200px){
+
+}
+
+@media (max-width: 767px){
+  
+}
+
+@media (max-width: 479px){
+ 
+}
+
+/* ===================== ---M E D I A ===================== */

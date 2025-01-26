@@ -1,0 +1,434 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+.short-characteristics {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+	width: 100%;
+	order: 2;
+	margin: 0 0 20px;
+}
+
+.plotnost-rating-span {
+	display: grid;
+	width: 120px;
+	height: 4px;
+	background: #b7b7b7;
+	border-radius: 4px;
+	align-items: center;
+}
+
+.plotnost-rating-span {
+	display: block;
+	width: -webkit-calc(2px + 2 * 28px);
+	height: 4px;
+	margin-left: 1px;
+	border-radius: 4px;
+	background: #000;
+}
+
+.option-massa .option-values {
+	padding: 0px;
+}
+
+.option.option-pomol.is-radio {
+	width: 150px;
+	position: relative;
+	z-index: 6;
+}
+
+.option-pomol .option-values {
+	background: #fff;
+	padding: 5px;
+	position: absolute;
+	box-shadow: 0 0 5px;
+}
+
+.option-pomol .option-value span {
+	width: 100%;
+	padding: 0.3rem 0.5rem !important;
+	line-height: 1.372;
+	font-size: 0.875rem;
+	font-size: 0.875rem;
+}
+
+.product__sale-value {
+	position: absolute;
+	bottom: 100%;
+	margin: 0 0 20px;
+	left: 136px;
+}
+
+.ddn {
+	display: none !important;
+}
+
+/* ----- ++S E L E C T ----- */
+
+.slt {
+	text-align: left;
+}
+
+.slt .cs {
+	position: relative;
+}
+
+.slt i {
+	position: absolute;
+	top: 40%;
+	bottom: 0px;
+	right: 5px;
+	border: 6px solid transparent;
+	border-top-color: #ddd7b5;
+	margin: auto;
+}
+
+.slt input[type="text"] {
+	display: block;
+	border-radius: 0 5px 5px 0;
+	border-left: 0;
+	font-size: 20px;
+	padding: 6px 10px 5px;
+	margin-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.slt .es {
+	background: #fff;
+	cursor: pointer;
+	padding: 6px 5px 5px;
+}
+
+.slt .d-d .es:hover {
+	background-color: #97221b;
+	color: #fff;
+}
+
+.slt .sld {
+	border-radius: 5px;
+	border: 1px solid #bfb796;
+	padding: 7px 20px 6px 11px;
+	cursor: pointer;
+}
+
+.slt .act {
+	background: #3a3;
+	color: #fff;
+	cursor: default;
+	display: none;
+}
+
+.slt .d-d {
+	border: 1px solid #bfb796;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	z-index: 500;
+	margin: 2px 0 0;
+	background: #fff;
+}
+
+/* ----- --S E L E C T ----- */
+
+/* ----- ++Q U A N T I T Y ----- */
+
+.quantity {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.quantity * {
+	box-sizing: border-box;
+}
+
+.quantity p {
+	line-height: 96%;
+	padding-top: 4px;
+	border: 1px solid #bfb796;
+	text-align: center;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	height: 40px;
+	width: 40px;
+	font-size: 30px;
+	float: left;
+	cursor: pointer;
+	margin: 0;
+	background: #E8E8E8;
+}
+
+.quantity-nmr {
+	width: 48px;
+	height: 40px;
+	font-size: 16px;
+	padding: 10px 10px;
+	border: 0;
+	background: #fff;
+	color: #666;
+	float: left;
+	border: 1px solid #bfb796;
+	border-left: 0;
+	border-right: 0;
+}
+
+.quantity .kq {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: none;
+	z-index: 950;
+}
+
+.quantity-nmr:hover+.kq {
+	display: block;
+}
+
+.quantity .kq:focus,
+.quantity .kq:hover {
+	display: block;
+}
+
+.quantity input:focus+.kq {
+	display: block;
+}
+
+.quantity p:hover {
+	background: #ccc;
+}
+
+/* ----- --Q U A N T I T Y ----- */
+
+/* ----- ++T O G G L E ----- */
+
+[data-toggle-e]:not(.act) {
+	display: none;
+}
+
+/* ----- --T O G G L E ----- */
+
+/* ----- ++T A B S ----- */
+
+.tabs__in:not(.act) {
+	display: none;
+}
+
+/* ----- --T A B S ----- */
+
+/* ----- ++Cleaning Services Calculator -----*/
+
+.csc {
+	color: #504020;
+	font-family: Arial;
+	background: #ddd7b5;
+	padding: 40px 50px;
+	width: 100%;
+	max-width: 640px;
+	margin: 50px auto;
+	font-size: 14px;
+	border-radius: 3px;
+}
+
+.csc-h {
+	font-size: 32px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 35px;
+}
+
+.csc-w {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.csc-t {
+	width: 100%;
+}
+
+.csc-td {
+	width: 50%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.csc-td:nth-child(1) {
+	padding-right: 10px;
+}
+
+.csc-td:nth-child(2) {
+	padding-left: 10px;
+}
+
+.csc-td.csc-td_3 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.csc-sup {
+	margin: 0 0 0 -3px;
+}
+
+.csc-e-c {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.csc-e {
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 10px;
+	border: 2px solid #CBC192;
+	border-radius: 10px;
+	margin: 5px;
+	padding: 10px;
+	width: 30%;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-item: space-between;
+}
+
+.csc-h1 {
+	width: 100%;
+	align-self: flex-end;
+}
+
+.quantity_1 {
+	margin-bottom: 10px;
+}
+
+.csc-inp {
+	padding: 7px 11px 6px 11px;
+	font-size: 14px;
+	border: 1px solid #bfb796;
+	color: #504020;
+}
+
+.csc-inp1 {
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	margin: 0;
+}
+
+.csc-inp2 {
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.csc-inp2-w {
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.csc-f-c {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.csc-f {
+	max-width: 100%;
+}
+
+.csc-radio-lbl {
+	padding: 5px 0 15px;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.csc-td_1,
+.csc-td_2 {
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	padding-top: 30px;
+}
+
+.csc-td_1 {
+	text-align: right;
+}
+
+/*----- --Cleaning Services Calculator -----*/
+
+@media screen and (max-width:768px) {
+	.csc-e {
+		width: 45%;
+	}
+}
+
+@media screen and (max-width:479px) {
+
+	.csc-inp1,
+	.csc-inp2 {
+		width: 28px;
+		height: 28px;
+	}
+
+	.csc {
+		padding: 20px 10px;
+		font-size: 12px;
+	}
+
+	.csc-inp {
+		font-size: 12px;
+	}
+
+	.csc-e {
+		margin: 5px 0;
+		padding: 10px 5px;
+		width: 47%;
+	}
+
+	.b10-td {
+		width: 100%;
+	}
+
+	.b11-c_1 .b11-b0 {
+		width: 100%;
+	}
+
+	.menu-ul {
+		width: 100%;
+		padding-right: 15px;
+	}
+
+	.b5-t2 {
+		flex-wrap: wrap;
+	}
+
+	.b5-td2 {
+		width: 100%;
+	}
+
+	.b5-a1 {
+		font-size: 18px;
+	}
+
+	.f-td1:nth-child(n) {
+		width: 100%;
+	}
+
+	.f-td:nth-child(n) {
+		width: 100%;
+	}
+
+	.b1-td {
+		width: 100%;
+		padding: 0 0 10px;
+	}
+
+	.b11-b0 {
+		width: 100%;
+	}
+}

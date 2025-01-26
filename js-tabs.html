@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>T-A-B-S</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/3x3.jpg">
+  <link rel="stylesheet" href="css/css.css" />
+  <link rel="stylesheet" href="css/tabs.css" />
+  <link rel="stylesheet" href="css/scrollbar.css" />
+  <script type="text/javascript" src="js/js.js"></script>
+  <script type="text/javascript" src="js/tabs.js"></script>
+  <script type="text/javascript" src="js/scrollbar.js"></script>  
+</head>
+
+<body>
+  <div class="menu-nav menu-nav__act">
+		<div class="menu-nav__hide"></div>
+		<div class="menu-nav__close">&#x2715;</div>
+		<div class="menu-nav__h">
+			<span class="menu-nav__h-1">Н</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">в</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">г</span>
+			<span class="menu-nav__h-1">а</span>
+			<span class="menu-nav__h-1">ц</span>
+			<span class="menu-nav__h-1">и</span>
+			<span class="menu-nav__h-1">я</span>
+			<span class="menu-nav__h-1">:</span>
+		</div>
+		<ul class="menu-nav__ul">
+			<li class="menu-nav__li">
+				<a href="js-slider.html" class="menu-nav__a">Слайдер</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-tabs.html" class="menu-nav__a menu-nav__a-act">Табы</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-scrollbar.html" class="menu-nav__a">Скроллбар</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-carousel.html" class="menu-nav__a">Карусель</a>
+			</li>
+			<li class="menu-nav__li">
+				<a href="js-modal-window.html" class="menu-nav__a">Модальное окно</a>
+			</li>
+		</ul>
+		<a href="portfolio.html#anchor-portfolio" class="menu-nav__a menu-nav__a_1">Обратно на страницу портфолио</a>
+	</div>
+
+	<style>
+			.menu-nav{
+					display: none;
+					position:fixed;
+					top:0;
+					bottom:0;
+					left:0;
+					z-index:9999;
+					margin:auto 20px auto 0;
+					background-color: #282a36;
+					border: 5px solid #0a0;
+					box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+			}
+			.menu-nav__act{
+					display: table;
+			}
+			.menu-nav__hide{
+					color: #fff;
+					position: absolute;
+					bottom: 0;
+					top:0;
+					right: -22px;
+					margin:auto 0;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 38px;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					padding:0 0 0 15px;
+					background: radial-gradient(circle, #000000 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__hide-act .menu-nav__hide{
+					padding:0 0 0 4px;
+			}
+			.menu-nav__hide:before{
+					content:'\2B05';
+			}
+			.menu-nav__hide-act .menu-nav__hide:before{
+					content:'\27A1';
+			}
+			.menu-nav__hide:hover{
+					box-shadow: 0 0 10px #fff;
+					padding:0 0 0 9px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__hide:hover{
+					padding:0 0 0 9px;
+			}
+			.menu-nav__hide-act{
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__ul,
+			.menu-nav__hide-act .menu-nav__a{
+					display: none;
+			}
+			.menu-nav__close{
+					position: absolute;
+					top: -20px;
+					right: -22px;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 54px;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__close:hover{
+					box-shadow: 0 0 10px #fff;
+					line-height: 29px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__h{
+					color:#fff;
+					font-size:20px;
+					text-align: center;
+					margin:10px 0 10px;
+          font-family: "Time New Romans", sans-serif;
+			}
+			.menu-nav__hide-act .menu-nav__h{
+					margin:10px 0 ;
+			}
+			.menu-nav__hide-act .menu-nav__h-1{
+					display: block;
+					padding:0 25px 0 5px;
+					line-height:80%;
+			}
+			.menu-nav__hide-act .menu-nav__h-1:last-child{
+					display: none;
+			}
+			.menu-nav__ul{
+					padding: 0 25px 5px 15px;
+					margin:0 0 0 15px;
+			}
+			.menu-nav__li{
+          font-family: "Time New Romans", sans-serif;
+          font-size: 14px;
+					margin:5px 0 15px;
+					list-style: decimal;
+					color: #fff;
+			}
+			.menu-nav__a{
+					color: #fff;
+					font-family: "Time New Romans", sans-serif;
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 14px;
+					background: #0a0;
+					border-radius: 14px;
+					box-shadow: 0 5px #070;
+					margin:0 0 0 10px;
+					text-decoration: underline;
+			}
+			.menu-nav__a:focus{
+					color: #fff;
+			}
+			.menu-nav .menu-nav__a:hover{
+					color:#fff !important;
+					box-shadow: 0 5px #070, 0px 5px 6px #fff;
+			}
+			.menu-nav__a-act{
+					background: #75f;
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+					cursor:default;
+			}
+			.menu-nav .menu-nav__a-act:hover{
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+			}
+			.menu-nav__a_1{
+				display: block;
+				margin:0 25px 20px 25px;
+				text-align: center;
+			}
+	</style>
+
+	<script>
+		function menuNav(){
+			let container = document.querySelector('.menu-nav');
+			let close = container.querySelector('.menu-nav__close');
+			let hide = container.querySelector('.menu-nav__hide');
+		
+			close.addEventListener('click', () => {
+				[container, ...container.querySelectorAll('.menu-nav__act')].forEach( (elmAct) => {
+					elmAct.classList.remove('menu-nav__act');
+				})
+			})
+
+			hide.addEventListener('click', () => {
+				container.classList.toggle('menu-nav__hide-act');
+			})
+		}
+		menuNav();
+	</script>
+
+
+
+  <div class="container">
+    <h1 class="fs-h1">
+      T-A-B-S
+    </h1>
+    <div class="fs-w">
+      <span class="fs-w-1">
+        <!-- Табы (вкладки) — это элемент интерфейса, который 
+        позволяет пользователю переключаться между контентом,
+        разбитым на несколько секций.
+
+        Это набор ссылок или других HTML-элементов, при нажатии
+        на которые включается видимость какого-либо одного блока
+        с контентом и скрывается отображение другого или их блоков.
+
+        Табы используются для экономии места и более удобного 
+        представления информации на сайте. По названию таба
+        или вкладки можно определить, какое содержимое отобразится
+        на странице, если нажать на неё. -->
+
+        Табы. Компактное размещение различного контента. 
+        <br>
+        Нажатие на кнопку (аналогично вкладке браузера) отображает
+        соответствующий ей контент, скрывая предыдущий.
+      </span> 
+    </div>
+  </div>  
+
+  <div class="container10">
+    <div class='tabs'>
+      <div class='tabs__tablist'>
+        <div class='tabs__tab tabs__act' data-tabs="group-1 btn-1">
+          Группа&nbsp;№&nbsp;1 - Кнопка&nbsp;№&nbsp;1
+        </div>
+        <div class='tabs__tab' data-tabs="group-1 btn-2">
+          Группа&nbsp;№&nbsp;1 - Кнопка&nbsp;№&nbsp;2
+        </div>
+      </div>
+    
+      <div class='tabs__panels'>
+        <div class='tabs__panel tabs__act' data-tabs="group-1 panel-1">
+          Группа № 1 - Контент № 1. <br>
+          Длинный текст текст текст текст текст
+          текст текст текст текст текст текст текст
+          текст текст текст текст текст текст текст текст текст.
+        </div>
+        <div class='tabs__panel' data-tabs="group-1 panel-2">
+          Группа № 1 - Контент № 2. <br>
+          Длинный текст текст текст текст текст
+          текст текст текст текст текст текст текст
+          текст текст текст текст текст текст текст текст текст.
+        </div>
+      </div>
+    </div>
+  </div>  
+
+
+
+  <div class="container">
+    <h2 class="fs-h2">
+      Подробнее
+    </h2>
+    <div class="fs-w1">
+      <p class="fs-p">
+        Отличительной особенностью реализации табов является 
+        возможность размещения тегов кнопок/контента одной группы в разных частях web-страницы, как показала
+        практика, web-проекты с такой особенностью тоже существуют. 
+      </p>
+      <h4 class="fs-h4">
+        Компактность
+      </h4>
+      <p class="fs-p">
+        Размер основных/минимальных файлов HTML/CSS/JS скрипта (<b class="fs-b">ядра табов</b>) в
+        минифицированном виде с помощью сборщика проектов webpack - 
+        HTML((122&nbsp;байта - минимум когда 2 вкладки) + 
+        (52&nbsp;байта за добавочную 1 вкладку) ) + CSS(153&nbsp;байта) + 
+        JS(728&nbsp;байта) = 1003&nbsp;байта = почти ровно <b class="fs-b">1Кб</b>. Это крайне компактно.
+        Для сравнения, только подключение вспомогательного инструмента JQuery для запуска 
+        множества плагинов, которые без него не работают jquery-2.1.4.min.js = 83Кб.<br>
+        Компактность важный параметр, чем меньше размер файлов скрипта (табов) тем:
+      </p>
+      <ol class="fs-ol">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            быстрее загрузка страницы
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            лучше показатели SEO у поисковиков
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            выше степень юзабилити
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            меньше расход трафика
+          </div>
+        </li>
+      </ol>
+      <h4 class="fs-h4">
+        Кроссбраузерность
+      </h4>
+      <p class="fs-p">
+        <b class="fs-b">Ядро табов</b> (основа, без визуального оформления, только функциональность) отмечена комментариями
+        в коде CSS, JS, разработана с учётом кроссбраузерности, поддержкой даже старых браузеров таких как IE7+.
+      </p>  
+      <p class="fs-p">
+        <b class="fs-b">Ядро табов:</b>
+      </p>
+      <ol class="fs-ol">
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            пользовательский атрибут у кнопки <b class="fs-b">data-tabs="group-1 btn-1"</b>
+            и соответствующий ей контент с атрибутом <b class="fs-b">data-tabs="group-1 panel-1"</b> значение которого состоит из двух слов, 
+            первое - группа табов (<b class="fs-b">group-1</b>, название настраивается программистом)
+            второе - определяет кнопку <b class="fs-b">btn-</b> или контент <b class="fs-b">panel-</b>, после дефиса вместо единицы может быть одинаковое 
+            название (для пары кнопка\контент определенной группы) настраеваемое программистом
+          </div>
+        </li>
+        <li class="fs-li">
+          <div class="fs-li-txt">
+            класс <b class="fs-b">tabs__act</b> добавляется в ручную активной кнопки и соответствующему этой кнопки контенту
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+
+  
+  <div class="container10 container10_0">
+    <h2 class="fs-h2">
+      КОД
+    </h2>
+
+    <div class="code">
+      <div class='tabs__tablist'>
+        <div class='tabs__tab code__tab tabs__act' data-tabs="code-1 btn-1">
+          HTML
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-2">
+          CSS
+        </div>
+        <div class='tabs__tab code__tab' data-tabs="code-1 btn-3">
+          JS
+        </div>
+      </div>
+      <div class="code__box">
+        <div class="code__panel tabs__act" data-tabs="code-1 panel-1">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+<div class='tabs'>
+  <div class='tabs__tablist'>
+    <div class='tabs__tab tabs__act' data-tabs="group-1 btn-1">
+      Группа&nbsp;№&nbsp;1 - Кнопка&nbsp;№&nbsp;1
+    </div>
+    <div class='tabs__tab' data-tabs="group-1 btn-2">
+      Группа&nbsp;№&nbsp;1 - Кнопка&nbsp;№&nbsp;2
+    </div>
+  </div>
+
+  <div class='tabs__panels'>
+    <div class='tabs__panel tabs__act' data-tabs="group-1 panel-1">
+      Группа № 1 - Контент № 1. <br>
+      Длинный текст текст текст текст текст
+      текст текст текст текст текст текст текст
+      текст текст текст текст текст текст текст текст текст.
+    </div>
+    <div class='tabs__panel' data-tabs="group-1 panel-2">
+      Группа № 1 - Контент № 2. <br>
+      Длинный текст текст текст текст текст
+      текст текст текст текст текст текст текст
+      текст текст текст текст текст текст текст текст текст.
+    </div>
+  </div>
+</div>
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-2">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+/* +++T A B S */
+
+/* +++Ядро табов */
+
+[data-tabs *=  btn-] {
+  cursor: pointer;
+}
+[data-tabs *=  btn-].tabs__act {
+  cursor: default;
+}
+[data-tabs *=  panel-] {
+  display: none;
+}
+[data-tabs *=  panel-].tabs__act {
+  display: block;
+}
+
+/* ---Ядро табов */
+
+.tabs__tablist {
+  display: flex;
+}
+.tabs__tab {
+  display: grid;
+  padding: 25px 50px;
+  align-items: center;
+  font-family: "66";
+  letter-spacing: -1px;
+}
+.tabs__tab.tabs__act,
+.tabs__tab.tabs__act:hover {
+  background: #0a0;
+  color: #fff;
+}
+.tabs__tab:hover {
+  box-shadow: inset 0 0 30px rgba(0, 170, 0, 0.5);
+}
+.tabs__panels {
+  border: 5px solid #0a0;
+  padding: 25px 50px 30px;
+  box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+}
+.tabs__panel {
+  font-family: "75";
+  letter-spacing: 3px;
+}
+
+@media (max-width: 1200px) {
+  .tabs__tab {
+    padding: 25px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tabs__tab {
+    text-align: center;
+    width: 50%;
+    padding: 20px 10px;
+  }
+  .tabs__panels {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 479px) {
+  .tabs__panel {
+    letter-spacing: 1px;
+  }
+}
+
+/* ---T A B S */
+            </code>
+          </div>  
+        </div>  
+
+        <div class="code__panel" data-tabs="code-1 panel-3">
+          <div class="code__scrollbar" data-scrollbar="code__scrollbar-1">
+            <code class="code__text">
+// +++T A B S
+
+function tabs() {
+  // +++Ядро табов
+  document.querySelectorAll('[data-tabs *= " btn-"]').forEach((elmBn) => {
+    elmBn.addEventListener('click', () => {
+      let attrV = elmBn.getAttribute('data-tabs');
+      let attrArr = attrV.split(' ');
+      let group = attrArr[0];
+      let idTab = attrArr[1].split('btn-')[1];
+      let panelNew = document.querySelector('[data-tabs = "'+ group +' panel-'+ idTab +'"]');
+      let btnNew = document.querySelector('[data-tabs = "'+ group +' btn-'+ idTab +'"]');
+      let elmsAct = document.querySelectorAll('[data-tabs ^= "'+ group +'"].tabs__act');
+
+      elmsAct.forEach((elmAct) => {
+        elmAct.classList.remove('tabs__act');
+      })
+
+      btnNew.classList.add('tabs__act');
+      panelNew.classList.add('tabs__act');
+    });
+  })
+  // ---Ядро табов
+
+  // Если при настройки табов забыли назначить вкладку активной, автоматически назначает первую.
+  function addActiveTab(){
+    let groupPrev = '';
+    document.querySelectorAll('[data-tabs *= " btn-"]').forEach((elmBn) => {
+      let attrV = elmBn.getAttribute('data-tabs');
+      let attrArr = attrV.split(' ');
+      let group = attrArr[0];			
+
+      if(groupPrev == group) return;
+      groupPrev = group;
+
+      let elmsAct = document.querySelectorAll('[data-tabs ^= "'+ group +'"].tabs__act');
+      if(elmsAct.length == 0){
+        document.querySelector('[data-tabs ^= "'+ group + ' btn-"]').classList.add('tabs__act');
+        document.querySelector('[data-tabs ^= "'+ group + ' panel-"]').classList.add('tabs__act');
+      }
+    });	
+  }
+  addActiveTab();
+}
+
+// ---T A B S
+
+document.addEventListener('DOMContentLoaded', () => {
+  tabs();
+})
+            </code>
+          </div>  
+        </div>  
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

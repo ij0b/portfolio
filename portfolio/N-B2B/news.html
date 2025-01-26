@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>News - N-B2B</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="maskedinput/maskedinput.js"></script>
+		<script type="text/javascript" src="js/js.js"></script>
+	</head>
+	<body>
+		<div class="menu-nav menu-nav__act">
+			<div class="menu-nav__hide"></div>
+			<div class="menu-nav__close">&#x2715;</div>
+			<div class="menu-nav__h">
+					<span class="menu-nav__h-1">Н</span>
+					<span class="menu-nav__h-1">а</span>
+					<span class="menu-nav__h-1">в</span>
+					<span class="menu-nav__h-1">и</span>
+					<span class="menu-nav__h-1">г</span>
+					<span class="menu-nav__h-1">а</span>
+					<span class="menu-nav__h-1">ц</span>
+					<span class="menu-nav__h-1">и</span>
+					<span class="menu-nav__h-1">я</span>
+					<span class="menu-nav__h-1">:</span>
+			</div>
+			<ul class="menu-nav__ul">
+				<li class="menu-nav__li">
+						<a href="index.html" class="menu-nav__a">Главная страница</a>
+				</li>
+				<li class="menu-nav__li">
+						<a href="catalog.html" class="menu-nav__a">Каталог</a>
+				</li>
+				<li class="menu-nav__li">
+						<a href="category.html" class="menu-nav__a">Категория</a>
+				</li>
+				<li class="menu-nav__li">
+						<a href="lk.html" class="menu-nav__a">Личный кабинет</a>
+				</li>
+				<li class="menu-nav__li">
+					<a href="news.html" class="menu-nav__a menu-nav__a-act">Новости</a>
+				</li>
+			</ul>
+			<a href="../../portfolio.html#anchor-portfolio" class="menu-nav__a menu-nav__a_1">Обратно на страницу портфолио</a>
+	</div>
+
+	<style>
+			.menu-nav{
+					display: none;
+					position:fixed;
+					top:0;
+					bottom:0;
+					left:0;
+					z-index:9999;
+					margin:auto 20px auto 0;
+					background-color: #282a36;
+					border: 5px solid #0a0;
+					box-shadow: inset 0 0 50px rgba(0, 170, 0, 0.5);
+			}
+			.menu-nav__act{
+					display: table;
+			}
+			.menu-nav__hide{
+					color: #fff;
+					position: absolute;
+					bottom: 0;
+					top:0;
+					right: -22px;
+					margin:auto 0;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 38px;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					padding:0 0 0 15px;
+					background: radial-gradient(circle, #000000 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__hide-act .menu-nav__hide{
+					padding:0 0 0 4px;
+			}
+			.menu-nav__hide:before{
+					content:'\2B05';
+			}
+			.menu-nav__hide-act .menu-nav__hide:before{
+					content:'\27A1';
+			}
+			.menu-nav__hide:hover{
+					box-shadow: 0 0 10px #fff;
+					padding:0 0 0 9px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__hide:hover{
+					padding:0 0 0 9px;
+			}
+			.menu-nav__hide-act{
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__hide-act .menu-nav__ul,
+			.menu-nav__hide-act .menu-nav__a{
+					display: none;
+			}
+			.menu-nav__close{
+					position: absolute;
+					top: -20px;
+					right: -22px;
+					width: 40px;
+					height: 40px;
+					color: #fff;
+					line-height: 54px;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 20px;
+					cursor: pointer;
+					border: 1px solid #fff;
+					transition: all linear 0.75s;
+					background: #000;
+					background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 1) 100%);
+			}
+			.menu-nav__close:hover{
+					box-shadow: 0 0 10px #fff;
+					line-height: 29px;
+					transition: all ease-out 0.75s;
+			}
+			.menu-nav__h{
+					color:#fff;
+					font-size:20px;
+					text-align: center;
+					margin:10px 0 10px;
+			}
+			.menu-nav__hide-act .menu-nav__h{
+					margin:10px 0 ;
+			}
+			.menu-nav__hide-act .menu-nav__h-1{
+					display: block;
+					padding:0 25px 0 5px;
+					line-height:80%;
+			}
+			.menu-nav__hide-act .menu-nav__h-1:last-child{
+					display: none;
+			}
+			.menu-nav__ul{
+					padding: 0 25px 5px 15px;
+					margin:0 0 0 15px;
+			}
+			.menu-nav__li{
+					margin:5px 0 15px;
+					list-style: decimal;
+					color: #fff;
+			}
+			.menu-nav__a{
+					color: #fff;
+					font-family: "Time New Romans", sans-serif;
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 14px;
+					background: #0a0;
+					border-radius: 14px;
+					box-shadow: 0 5px #070;
+					margin:0 0 0 10px;
+					text-decoration: underline;
+			}
+			.menu-nav__a:focus{
+					color: #fff;
+			}
+			.menu-nav .menu-nav__a:hover{
+					color:#fff !important;
+					box-shadow: 0 5px #070, 0px 5px 6px #fff;
+			}
+			.menu-nav__a-act{
+					background: #75f;
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+					cursor:default;
+			}
+			.menu-nav .menu-nav__a-act:hover{
+					box-shadow: 0 5px #64e;
+					text-decoration:none;
+			}
+			.menu-nav__a_1{
+				display: block;
+				margin:0 25px 20px 25px;
+				text-align: center;
+			}
+	</style>
+
+	<script>
+			function menuNav(){
+					let container = document.querySelector('.menu-nav');
+					let close = container.querySelector('.menu-nav__close');
+					let hide = container.querySelector('.menu-nav__hide');
+			
+					close.addEventListener('click', () => {
+							[container, ...container.querySelectorAll('.menu-nav__act')].forEach( (elmAct) => {
+									elmAct.classList.remove('menu-nav__act');
+							})
+					})
+
+					hide.addEventListener('click', () => {
+							container.classList.toggle('menu-nav__hide-act');
+					})
+			}
+			menuNav();
+	</script>
+
+
+		<header class='hr'>
+			<div class='hr1-c'>
+				<div class='hr1 c'>
+					<div class='hr1-w'>
+						Скидка на кабель ВВГ до 50%
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<div class='hr2-c'>
+				<div class='hr2 c'>
+					<div class='hr2-td'>
+						<div class='hr2-w'>
+							Удобный сервис подбора
+							электротехнической продукции
+							от ведущих поставщиков
+						</div>
+					</div>
+					<div class='hr2-td'>
+						<a class='hr2-a1 hr2-a1_1' href='#'>
+							<span class='hr2-a1-w1'>
+								zakaz@n-b2b.ru
+							</span>
+							<span class='hr2-a1-w2'>
+								Задать вопрос
+							</span>
+						</a>
+						<div class='hr2-sep'></div>
+						<a class='hr2-a1 hr2-a1_2' href='#'>
+							<span class='hr2-a1-w1'>
+								8 800 500-41-45
+							</span>
+							<span class='hr2-a1-w2'>
+								Бесплатно по РФ
+							</span>
+						</a>
+					</div>
+					<div class='hr2-td'>
+						<a class='hr2-a2 hr2-a2_1' href='#'>
+							Корзина
+						</a>
+						<div class='hr2-sep'></div>
+						<a class='hr2-a2 hr2-a2_2' href='#'>
+							Войти
+						</a>
+					</div>	
+				</div>	
+			</div>
+			
+			
+			
+			<div class='hr3-c'>
+				<div class='hr3 c'>
+					<div class='menu'>
+						<div class='menu-bn'>
+							<div class='menu-bn-1'></div>
+							<div class='menu-bn-1'></div>
+							<div class='menu-bn-1'></div>
+						</div>
+						<div class='menu-b'>
+							<ul class="menu-ul">
+								<li class="menu-li">
+									<div class='menu-h'>
+										<a class='menu-a' href='#'>
+											Название подкатегории
+										</a>
+									</div>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Кабель и провод
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Электротехническое
+										оборудование
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										СКС и телеком
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Инструмент и средства 
+										зищиты
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Электрощитовое
+										оборудование
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Светотехническая
+										продукция
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Кабеленесущие
+										системы
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Материалы для
+										монтажа
+									</a>
+								</li>
+							</ul>
+
+							<ul class="menu-ul">
+								<li class="menu-li">
+									<div class='menu-h'>
+										<a class='menu-a' href='#'>
+											Название подкатегории
+										</a>
+									</div>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Кабель и провод
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Электротехническое
+										оборудование
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										СКС и телеком
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Инструмент и средства 
+										зищиты
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Электрощитовое
+										оборудование
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Светотехническая
+										продукция
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Кабеленесущие
+										системы
+									</a>
+								</li>
+								<li class="menu-li">
+									<a class='menu-a' href='#'>
+										Материалы для
+										монтажа
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<a class='logo' href='#'>
+						<img class='logo-f' src='img/logo.png' alt=''/>
+					</a>
+					<div class='srh-c'>
+						<div class='srh-bn'></div>
+						<input class='srh-inp' type='text' placeholder='Что необходимо найти ?'/>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class='hr5 hr5_1 c'>
+				<ul class='hr5-ul'>
+					<li class='hr5-li'>
+						<a class='hr5-a' href='#'>
+							Главная
+						</a>
+					</li>
+					<li class='hr5-li'>
+						Хлебные крошки
+					</li>
+				</ul>
+			</div>
+		</header>
+
+
+
+		<main class='mn'>
+			<h1 class='h1 c'>
+				Последние новости
+			</h1>
+			
+			<div class='c'>
+				<div class='b11-c'>
+					<div class='b11'>
+						<div class='b11-b0'>
+							<div class='b11-f' style='background-image:url("img/b11-1.png")'></div>
+							<a class='b11-h' href=''>
+								Название статьи
+							</a>
+							<div class='b11-w'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</div>
+							<a class='b11-a' href=''>
+								Подробнее
+							</a>
+						</div>	
+
+						<div class='b11-b0'>
+							<div class='b11-f' style='background-image:url("img/b11-2.png")'></div>
+							<a class='b11-h' href=''>
+								Название статьи
+							</a>
+							<div class='b11-w'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</div>
+							<a class='b11-a' href=''>
+								Подробнее
+							</a>
+						</div>	
+
+						<div class='b11-b0'>
+							<div class='b11-f' style='background-image:url("img/b11-3.png")'></div>
+							<a class='b11-h' href=''>
+								Название статьи
+							</a>
+							<div class='b11-w'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</div>
+							<a class='b11-a' href=''>
+								Подробнее
+							</a>
+						</div>	
+
+						<div class='b11-b0'>
+							<div class='b11-f' style='background-image:url("img/b11-4.png")'></div>
+							<a class='b11-h' href=''>
+								Название статьи
+							</a>
+							<div class='b11-w'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</div>
+							<a class='b11-a' href=''>
+								Подробнее
+							</a>
+						</div>	
+
+						<div class='b11-b0'>
+							<div class='b11-f' style='background-image:url("img/b11-1.png")'></div>
+							<a class='b11-h' href=''>
+								Название статьи
+							</a>
+							<div class='b11-w'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</div>
+							<a class='b11-a' href=''>
+								Подробнее
+							</a>
+						</div>	
+						<div class='b11-b0' data-toggle-b='b11-b0'>
+							<div class='b11-f' style='background-image:url("img/3x3.jpg")'></div>
+							<a class='b11-h' href=''>
+								Название статьи
+							</a>
+							<div class='b11-w'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</div>
+							<a class='b11-a' href=''>
+								Подробнее
+							</a>
+						</div>	
+						<div class='b11-b0' data-toggle-b='b11-b0'>
+							<div class='b11-f' style='background-image:url("img/3x1.jpg")'></div>
+							<a class='b11-h' href=''>
+								Название статьи
+							</a>
+							<div class='b11-w'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</div>
+							<a class='b11-a' href=''>
+								Подробнее
+							</a>
+						</div>	
+						<div class='b11-b0' data-toggle-b='b11-b0'>
+							<div class='b11-f' style='background-image:url("img/1x3.jpg")'></div>
+							<a class='b11-h' href=''>
+								Название статьи
+							</a>
+							<div class='b11-w'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</div>
+							<a class='b11-a' href=''>
+								Подробнее
+							</a>
+						</div> 	
+					</div>
+					
+					<div class='b11-bn-c'>
+						<div class='bn' data-toggle-bn='b11-b0'>
+							Больше новостей
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+
+
+		<footer class='fr'>
+			<div class='b4 b4_1'>
+				<div class='c'>
+					<div class='b4-h'>
+						Нужна консультация ?
+					</div>
+					<div class='b4-w'>
+						Оставьте свои данные 
+					</div>
+					<input class='b4-inp' type='text' placeholder='Ваше имя'/>
+					<input class='b4-inp' type='text' placeholder='Номер телефона' data-phone/>
+					<button class='bn3' type='submit'>
+						ОТПРАВИТЬ
+					</button>
+				</div>
+			</div>
+			<div class='fr1-c'>
+				<div class='c'>
+					<div class='fr1'>
+						<div class='fr1-b fr1-b_1'>
+							<a class='fr1-a' href='#'>
+								<img class='fr1-a-f' src='img/logo.png' alt='N-B2B логотип'/>
+							</a>
+							<div class='fr1-w'>
+								Lorem ipsum dolor sit amet, consectetur
+								adipisicing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna 
+								aliqua. Ut enim ad minim veniam, quis 
+								nostrud exercitation ullamco laboris nisi ut
+								aliquip ex ea commodo consequat.							
+							</div>
+						</div>
+						<div class='fr1-b fr1-b_2'>
+							<div class='menu2-c'>
+								<ul class='menu2 menu2_1'>
+									<li class='menu2-li'>
+										<a class='menu2-a menu2-a_1' href='#'>
+											О компании
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Сотрудничество
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Статьи
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Новости
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Поставщики
+										</a>
+									</li>
+								</ul>
+							
+								<ul class='menu2 menu2_2'>
+									<li class='menu2-li'>
+										<a class='menu2-a menu2-a_1' href='#'>
+											Клиентам
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Каталог товаров
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Доставка и оплата
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Как сделать заказ
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Оплата
+										</a>
+									</li>
+								</ul>
+							
+								<ul class='menu2 menu2_3'>
+									<li class='menu2-li'>
+										<a class='menu2-a menu2-a_1' href='#'>
+											Каталог
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Кабель и провод
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Электрическое оборудование
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											СКС и телеком
+										</a>
+									</li>
+									<li class='menu2-li'>
+										<a class='menu2-a' href='#'>
+											Материал монтажный
+										</a>
+									</li>
+									<li class='menu2-li menu2-li_1'>
+										<a class='menu2-a' href='#'>
+											Трубы
+										</a>
+									</li>
+									<li class='menu2-li menu2-li_1'>
+										<a class='menu2-a' href='#'>
+											Кабеленесущие системы
+										</a>
+									</li>
+								</ul>
+							</div>	
+						</div>
+						<div class='fr1-b fr1-b_3'>
+							<div class='fr1-h'>
+								Контакты
+							</div>
+							<a class='fr1-a1 fr1-a1_1' href='#'>
+								8 800 500-41-45
+							</a>
+							<a class='fr1-a1 fr1-a1_2' href='#'>
+								Санкт-Петербург,
+								пр-кт Трамвайный, д. 32 офис 110
+							</a>
+							<a class='fr1-a1 fr1-a1_3' href='#'>
+								zakaz@n-b2b.ru
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='fr2-c'>
+				<div class='c'>
+					<div class='fr2'>
+						<div class='fr2-w'>
+							Все права защищены. 2010-2022
+						</div>
+						<div class='fr2-f-c'>
+							<img class='fr2-f' src='img/i-vsa.png' alt=''/>
+							<img class='fr2-f' src='img/i-msd.png' alt=''/>
+							<img class='fr2-f' src='img/i-wby.png' alt=''/>
+							<img class='fr2-f' src='img/i-ydy.png' alt=''/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
