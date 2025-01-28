@@ -66,8 +66,6 @@ __В настоящее время работаю фрилансером https:/
 ### Контакты:
 1. **Электронная почта:**  
 ij0b@mail.ru
-2. **Через сайт hh.ru:**  
-https://rostov.hh.ru/resume/86172a95ff053fb6740039ed1f33623873324d
 
 <br><br><br>
 <h2 align='center'>В ПОИСКАХ КАКОЙ РАБОТЫ НАХОЖУСЬ</h2>
@@ -164,16 +162,16 @@ https://n-b2b.ru/
 <h3 align='center'>Для портфолио разработал на чистом JavaScript несколько своих собственных плагинов, похожие применяют на каждом 2-ом сайте</h3>
 
 ####  9 – Слайдер
-https://link.ru/
+https://ij0b.github.io/portfolio/js-slider.html
 
 ####  10 – Табы
-https://link.ru/
+https://ij0b.github.io/portfolio/js-tabs.html
 
-####  11 – Полоса прокрутки
-https://link.ru/
+####  11 – Скроллбар
+https://ij0b.github.io/portfolio/js-scrollbar.html
 
 ####  12 – Карусель
-https://link.ru/
+https://ij0b.github.io/portfolio/js-carousel.html
 
 ####  13 – Модальное окно
-https://link.ru/
+https://ij0b.github.io/portfolio/js-modal-window.html
