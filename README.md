@@ -89,7 +89,7 @@ ij0b@mail.ru
 <br>
 
 4. ___Применение стандартных технологий frontend-разработки применяемых на уровнях Junior, Middle, Senior:<br>
-      HTML, CSS, Препроцессоры, JS, Gulp, Webpack, Git, Vue.js и т.д.___
+      HTML, CSS, Препроцессоры, JS, Gulp, Webpack, Git, React, Vue и т.д.___
 
 <br>
 
