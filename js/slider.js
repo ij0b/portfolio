@@ -6,6 +6,8 @@ function slider() {
 
 	function render(){	
 		sliderElms.forEach((elmSlider) => {	
+            if(elmSlider.querySelectorAll('.slider__content').length == 1) return;
+            
 			let sliderClass = elmSlider.getAttribute('data-slider');
 			let sliderElmClass = elmSlider.getAttribute('data-slider-elm');
 			let sliderElms = elmSlider.querySelectorAll('.'+sliderElmClass);
@@ -48,6 +50,8 @@ function slider() {
 	sliderElms = document.querySelectorAll('[data-slider]');
 
 	sliderElms.forEach((elmSlider) => {
+        if(elmSlider.querySelectorAll('.slider__content').length == 1) return;
+        
 		let itemsC = elmSlider.querySelector('.slider__items');
 		let items = elmSlider.querySelectorAll('.slider__item');
 		let itemActId = 0;

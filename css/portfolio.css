@@ -1,13 +1,24 @@
 body{
-  padding-bottom:1000px;
+  padding-bottom:85vh;
+}
+/*git@github.com:ij0b/test.git
+https://github.com/ij0b/test.git
+git clone https://github.com/ij0b/test.git .
+
+package.json
+"homepage": "https://ij0b.github.io/test",
+"homepage": "C:\p\r\test-store-1\build",*/
+.anchor{
+  height:30px;
 }
 .container10.slider-portfolio-c{
   padding-bottom:0;
 }
 .container10.slider-portfolio-c_1{
   padding-bottom: 30px;
-  margin-bottom: 500px;
-  outline: solid 2px #fff;
+  margin-bottom: 25vh;
+  border: 4px solid #999; 
+  outline: 4px solid #fff;
   box-shadow: 0 0 20px #fff;
   border-radius: 50px;
 }
@@ -102,6 +113,10 @@ body{
 .pk-p-m__pk_9-5{
   background-image:url(../img/pk-9-5.jpg);
 }
+.pk-p-m__pk_10{
+  background-image:url(../img/pk-10.jpg);
+}
+
 .pk-p-m__p_1{
   background-image:url(../img/p-1.jpg);
 }
@@ -141,6 +156,10 @@ body{
 .pk-p-m__p_9-5{
   background-image:url(../img/p-9-5.jpg);
 }
+.pk-p-m__p_10{
+  background-image:url(../img/p-10.jpg);
+}
+
 .pk-p-m__m_1{
   background-image:url(../img/m-1.jpg);
 }
@@ -179,6 +198,9 @@ body{
 }
 .pk-p-m__m_9-5{
   background-image:url(../img/m-9-5.jpg);
+}
+.pk-p-m__m_10{
+  background-image:url(../img/m-10.jpg);
 }
 
 .tabs_about .tabs__tab{
@@ -280,8 +302,9 @@ body{
 }
 .sep{
   background: #fff;
-  height: 4px;
-  border-radius:10px;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #999;
+  border-radius: 100px 100px 0 0;
   margin:30px 0;
 }
 .t{
@@ -411,7 +434,8 @@ body{
 }
 .code_1 .code__tab{
   letter-spacing: -3px;
-  font-size: 0.95em;
+  font-size: 0.75em;
+  user-select:none;
 }
 .code_1 .code__box{
   padding:50px 20px 30px;
@@ -474,9 +498,19 @@ body{
 
 /* ===================== +++M E D I A ===================== */
 
+@media (min-width: 2100px){
+  .up .arw {
+      width: 80px;
+      height: 80px;
+      line-height: 73px;
+      font-size: 38px;
+      right:20px;
+  }
+}
+
 @media (max-width: 1200px){
   .txt1_2{
-    height: 111px;
+    height: 148px;
   }
   .ol1{
     margin: 0 0 0 21px;
@@ -501,6 +535,9 @@ body{
 }
 
 @media (max-width: 767px){
+  .anchor{
+    height:15px;
+  }
   .up .arw {
     width: 24px;
     height: 24px;
@@ -523,10 +560,12 @@ body{
   .slider__txt{
     min-height: 300px;
   }
+  .container10.slider-portfolio-c_1{
+    border-radius:25px;
+  }
   .slider-portfolio-c1{
     font-size:16px;
   }
-
 }
 
 @media (max-width: 600px){
@@ -536,6 +575,7 @@ body{
   }
   .bn{
     padding:15px 15px;
+    letter-spacing: 0px;
   }
   .bn-1{
     display: none;
@@ -546,6 +586,11 @@ body{
   .txt1_2{
     height: 56px;
     font-size:0.75em;
+  }
+  .code_1 .code__tab{
+    letter-spacing: -3px;
+    font-size: 0.75em;
+    user-select:none;
   }
   .code_1 .code__box{
     padding-bottom:0;
@@ -569,8 +614,9 @@ body{
     font-size: 11px;
   }
   .code_1 .tabs__tab{
-    font-size:10px;
+    font-size: 10px;
     letter-spacing: -2px;
+    padding: 10px 5px;
   }
   .slider__txt{
     min-height: 300px;
