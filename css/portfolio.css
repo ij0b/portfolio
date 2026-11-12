@@ -436,7 +436,7 @@ package.json
   font-size:22px;
 }
 .code_1 .code__tab{
-  letter-spacing: -3px;
+  letter-spacing: 0;
   font-size: 0.75em;
   user-select:none;
 }
