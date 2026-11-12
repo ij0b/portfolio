@@ -265,7 +265,7 @@ https://ij0b.github.io/portfolio/projects/плагины/js-carousel.html
 https://ij0b.github.io/portfolio/projects/плагины/js-modal-window.html
 
 <br>
-<h3 align='center'>Инструмент повышающий эффективность программирования</h3>
+<h3 align='center'>Автоматизация + ИИ (вайб-кодинг)</h3>
 
-####  14 – Unigen
+####  14 – Unigen - инструмент повышающий эффективность программирования
 https://github.com/ij0b/portfolio/tree/main/projects/unigen
