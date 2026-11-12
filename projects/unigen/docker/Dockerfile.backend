@@ -1,0 +1,7 @@
+FROM php:8.3-fpm-alpine
+RUN apk add --no-cache python3 py3-pip
+WORKDIR /var/www/html
+COPY ./ai_core/requirements.txt ./ai_core/requirements.txt
+RUN python3 -m venv /var/www/.venv
+RUN /var/www/.venv/bin/pip install --no-cache-dir -r ./ai_core/requirements.txt
+CMD ["php-fpm"]

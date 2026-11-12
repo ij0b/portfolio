@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_123
+      MYSQL_DATABASE: unigen_db
+  backend:
+    build: ./docker/Dockerfile.backend
+    volumes:
+      - ./lib/src/backend:/var/www/html
+      - ./lib/src/ai_core:/var/www/html/ai_core
+  frontend:
+    build: ./docker/Dockerfile.frontend
+    ports:
+      - "3000:80"
