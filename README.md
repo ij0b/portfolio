@@ -265,6 +265,7 @@ https://ij0b.github.io/portfolio/projects/плагины/js-carousel.html
 https://ij0b.github.io/portfolio/projects/плагины/js-modal-window.html
 
 <br>
-<h3 align='center'>Для портфолио дополнительно разработал тестовый интернет-магазин с применением актуальных технологий React, SASS (SCSS)</h3>
+<h3 align='center'>Инструмент повышающий эффективность программирования</h3>
 
-https://ij0b.github.io/portfolio/projects/react/build/index.html
+####  14 – Unigen
+https://github.com/ij0b/portfolio/tree/main/projects/unigen
