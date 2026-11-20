@@ -42,7 +42,8 @@
 }
 .tabs__panel {
   font-family: "75";
-  letter-spacing: 3px;
+  letter-spacing: 1px;
+  font-size: 1.25em;
 }
 
 /* ---T A B S */
