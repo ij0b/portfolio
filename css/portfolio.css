@@ -390,6 +390,7 @@ package.json
   position:static;
   display: inline-block;
   margin: 0px 5px 15px 5px;
+  text-decoration:none;
 }
 .bn_5{
   letter-spacing: 2px;
