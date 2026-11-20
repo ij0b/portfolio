@@ -398,13 +398,13 @@ package.json
   letter-spacing: 2px;
 }
 .bn:hover{
-  box-shadow: 0 5px #070, 0px 5px 6px #fff;
+  box-shadow: 0 5px #070, 0px 15px 30px #fff;
 }
 .bn:active{
   box-shadow: 0 2px #070, 0px 2px 3px #fff;
 }
 .bn_4:hover{
-  box-shadow: 0 5px #070, 0px 5px 20px #fff;
+  box-shadow: 0 5px #070, 0px 15px 30px #fff;
   z-index: 5;
   position: relative;
   top: 0;
