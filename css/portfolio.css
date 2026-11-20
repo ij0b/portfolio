@@ -437,7 +437,7 @@ package.json
 }
 .code_1 .code__tab{
   letter-spacing: 0;
-  font-size: 0.75em;
+  font-size: 1em;
   user-select:none;
 }
 .code_1 .code__box{
@@ -529,6 +529,9 @@ package.json
 }
 
 @media (max-width: 900px){
+  .code_1 .code__tab{
+    font-size: 0.75em;
+  }
   .slider__txt{
     min-height: 470px;
   }
