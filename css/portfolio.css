@@ -378,9 +378,11 @@ package.json
 }
 .bn_1{
   left: 0;
+  text-decoration:none;
 }
 .bn_2{
   right: 0;
+  text-decoration:none;
 }
 .bn_3{
   position:static;
